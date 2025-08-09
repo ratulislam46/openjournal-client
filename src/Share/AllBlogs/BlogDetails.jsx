@@ -55,7 +55,7 @@ const BlogDetails = () => {
 
     return (
         <div>
-            <div className='w-11/12 mx-auto my-16'>
+            <div className='w-11/12 mx-auto mt-20 mb-16'>
                 <div className='bg-amber-100'>
                     <div className="lg:flex shadow-sm">
                         <div className='lg:w-[50%]'>

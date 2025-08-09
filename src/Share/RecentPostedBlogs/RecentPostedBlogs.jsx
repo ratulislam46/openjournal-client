@@ -15,10 +15,10 @@ const RecentPostedBlogs = () => {
     }, [])
 
     return (
-        <div className='py-16'>
+        <div className='mt-10 border px-2 lg:px-0'>
             <h1 className='text-5xl lg:text-6xl text-center mt-16 mb-8 uppercase font-serif'>Recently posted blogs</h1>
-            <div className='w-11/12 mx-auto my-16'>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <div className='my-16'>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                     {
                         blogs?.map(blog => <ShowRecentBlog blog={blog} key={blog._id} ></ShowRecentBlog>)
                     }

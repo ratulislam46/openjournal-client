@@ -18,7 +18,7 @@ const AllBlogs = () => {
     // console.log(search);
 
     return (
-        <div className='pb-16 '>
+        <div className='pb-16 pt-20'>
             <h1 className='text-5xl lg:text-6xl text-center mt-16 mb-8 uppercase font-serif'>All blogs</h1>
 
             {/* search input  */}

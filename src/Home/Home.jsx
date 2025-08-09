@@ -9,10 +9,10 @@ import Agency from '../Extra/Agency/Agency';
 const Home = () => {
     return (
         <div className='container mx-auto'>
-            <section className='mt-2'>
+            <section className='pt-20'>
                 <Banner></Banner>
             </section>
-            <section className='bg-[#eafaf1]'>
+            <section>
                 <RecentPostedBlogs></RecentPostedBlogs>
             </section>
             <section>

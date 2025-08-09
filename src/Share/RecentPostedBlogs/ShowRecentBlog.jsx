@@ -12,8 +12,8 @@ const ShowRecentBlog = ({ blog }) => {
 
     const handleWishList = (id) => {
 
-        console.log('added wishlisht', id);
-        console.log(blog);
+        // console.log('added wishlisht', id);
+        // console.log(blog);
         axios.post('https://openjournal-server.vercel.app/wishlist', {
             userEmail: user?.email,
             category: blog.category,
@@ -28,7 +28,8 @@ const ShowRecentBlog = ({ blog }) => {
                 toast.success('Add wishlist successfully')
             })
             .catch(error => {
-                console.log(error);
+                // console.log(error);
+                toast.error('Error wihlisht')
             })
     }
 
@@ -42,7 +43,7 @@ const ShowRecentBlog = ({ blog }) => {
                 {/* blog title and description  */}
                 <div className="flex flex-col justify-between p-6 space-y-8">
                     <div className="space-y-2">
-                        <h4 className='bg-blue-200 inline-block px-4 rounded-xs'> {category} </h4>
+                        {/* <h4 className='bg-blue-200 inline-block px-4 rounded-xs'> {category} </h4> */}
                         <h2 className="text-3xl font-semibold tracking-wide">{title}</h2>
                         <p className="text-gray-500"> {shortdescription} </p>
                     </div>

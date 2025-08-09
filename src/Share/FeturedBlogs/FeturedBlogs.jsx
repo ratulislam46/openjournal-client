@@ -38,8 +38,8 @@ const FeturedBlogs = () => {
     ]
 
     return (
-        <div className='py-16'>
-            <div className='w-11/12 mx-auto shadow-xl'>
+        <div className='py-16 pt-20'>
+            <div className='w-11/12 mx-auto'>
                 <DataTable
                     columns={tableData}
                     data={feturedBlogs}

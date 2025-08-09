@@ -21,14 +21,19 @@ const Navbar = () => {
     const links =
         <>
             <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/addBlog'>AddBlog</NavLink></li>
-            <li><NavLink to='/allBlogs'>AllBlogs</NavLink></li>
-            <li><NavLink to='/feturedBlogs'>FeturedBlogs</NavLink></li>
-            <li><NavLink to='/wishList'>WishList</NavLink></li>
+
+            <li><NavLink to='/allBlogs'>All Blogs</NavLink></li>
+            <li><NavLink to='/feturedBlogs'>Fetured Blogs</NavLink></li>
+
+            {user &&
+                <>
+                    <li><NavLink to='/addBlog'>Add Blog</NavLink></li>
+                    <li><NavLink to='/wishList'>WishList</NavLink></li>
+                </>}
         </>
 
     return (
-        <div className='bg-base-100 shadow-sm'>
+        <div className='shadow-sm fixed top-0 left-0 w-full z-50 bg-red-100'>
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
