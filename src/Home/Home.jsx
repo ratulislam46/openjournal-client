@@ -6,6 +6,7 @@ import Talk from '../Extra/Talk/Talk';
 import Text from './Text';
 import Agency from '../Extra/Agency/Agency';
 import CustomerSay from './CustomerSay';
+import Category from './Category';
 
 const Home = () => {
     return (
@@ -19,8 +20,11 @@ const Home = () => {
             <section>
                 <Agency></Agency>
             </section>
-            <section>
+            {/* <section>
                 <Text></Text>
+            </section> */}
+            <section>
+                <Category></Category>
             </section>
             <section>
                 <Talk></Talk>

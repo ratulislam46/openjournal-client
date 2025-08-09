@@ -8,10 +8,12 @@ const Agency = () => {
         <div className='px-2 lg:px-0'>
             <div className='py-16 lg:py-24'>
                 <div className='lg:flex items-center gap-1'>
-                    <div className=' lg:w-[40%]'>
+
+                    <div data-aos="fade-right" className=' lg:w-[40%]'>
                         <img src={Travel} alt="" className='w-96 h-[500px] rounded-3xl' />
                     </div>
-                    <div className=' lg:w-[60%] space-y-6 mt-18 lg:mt-0'>
+
+                    <div data-aos="fade-left" className=' lg:w-[60%] space-y-6 mt-18 lg:mt-0'>
                         <p className='text-sky-500 text-xl'>
                             About Travil Agency
                         </p>

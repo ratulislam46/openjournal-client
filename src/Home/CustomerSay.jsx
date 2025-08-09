@@ -101,7 +101,7 @@ const CustomerSay = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center pt-0 lg:pt-6 pb-20">
+        <div data-aos="zoom-in-right" className="flex flex-col items-center justify-center pt-0 lg:pt-6 pb-20">
 
             {/* image  */}
             <div>

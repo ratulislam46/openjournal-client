@@ -11,7 +11,7 @@ const NewLetter = () => {
 
     return (
         <div className='py-20 pt-10'>
-            <div className='w-11/12 mx-auto'>
+            <div data-aos="zoom-in-right" className='w-11/12 mx-auto'>
                 <h1 className='text-5xl lg:text-6xl font-serif text-center uppercase'>News letter</h1>
                 <form onSubmit={handleNewsLetter} className='mt-16'>
                     <input type="email" className='input border-white w-[67%] py-8' required />
