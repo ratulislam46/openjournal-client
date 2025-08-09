@@ -15,7 +15,7 @@ const RecentPostedBlogs = () => {
     }, [])
 
     return (
-        <div className='mt-10 border px-2 lg:px-0'>
+        <div className='mt-10 px-2 lg:px-0'>
             <h1 className='text-5xl lg:text-6xl text-center mt-16 mb-8 uppercase font-serif'>Recently posted blogs</h1>
             <div className='my-16'>
                 <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
