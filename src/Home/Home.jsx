@@ -7,12 +7,16 @@ import Text from './Text';
 import Agency from '../Extra/Agency/Agency';
 import CustomerSay from './CustomerSay';
 import Category from './Category';
+import Cards from './Cards';
 
 const Home = () => {
     return (
         <div className='container mx-auto'>
             <section className='pt-20'>
                 <Banner></Banner>
+            </section>
+            <section>
+                <Cards></Cards>
             </section>
             <section>
                 <RecentPostedBlogs></RecentPostedBlogs>
