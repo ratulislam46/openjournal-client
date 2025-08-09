@@ -5,6 +5,7 @@ import RecentPostedBlogs from '../Share/RecentPostedBlogs/RecentPostedBlogs';
 import Talk from '../Extra/Talk/Talk';
 import Text from './Text';
 import Agency from '../Extra/Agency/Agency';
+import CustomerSay from './CustomerSay';
 
 const Home = () => {
     return (
@@ -23,6 +24,9 @@ const Home = () => {
             </section>
             <section>
                 <Talk></Talk>
+            </section>
+            <section>
+                <CustomerSay></CustomerSay>
             </section>
             <section>
                 <NewLetter></NewLetter>

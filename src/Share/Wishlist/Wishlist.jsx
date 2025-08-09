@@ -19,7 +19,7 @@ const Wishlist = () => {
     console.log(initialBlogs);
 
     return (
-        <div className='my-24'>
+        <div className='mb-24 pt-12'>
 
             <div className='grid grid-cols-1 gap-6 my-16'>
                 {

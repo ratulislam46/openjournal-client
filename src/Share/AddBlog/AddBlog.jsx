@@ -32,7 +32,7 @@ const AddBlog = () => {
 
     return (
         <div>
-            <h1 className='text-5xl lg:text-6xl text-center mt-16 mb-8 uppercase font-serif'>Add blog</h1>
+            <h1 className='text-5xl lg:text-6xl text-center pt-28 mb-8 uppercase font-serif'>Add blog</h1>
             <div className='w-11/12 mx-auto flex justify-center mb-8'>
                 <form onSubmit={handleAddJob}>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
