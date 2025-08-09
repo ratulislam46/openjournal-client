@@ -8,11 +8,11 @@ import Agency from '../Extra/Agency/Agency';
 
 const Home = () => {
     return (
-        <div>
-            <section>
+        <div className='container mx-auto'>
+            <section className='mt-2'>
                 <Banner></Banner>
             </section>
-            <section className='bg-[#eafaf1] '>
+            <section className='bg-[#eafaf1]'>
                 <RecentPostedBlogs></RecentPostedBlogs>
             </section>
             <section>
