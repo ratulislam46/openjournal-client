@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { AuthContext } from '../../Auth/AuthProvider';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Typewriter } from 'react-simple-typewriter'
 
 
 const AddBlog = () => {
@@ -32,7 +33,19 @@ const AddBlog = () => {
 
     return (
         <div>
-            <h1 className='text-5xl lg:text-6xl text-center pt-28 mb-8 uppercase font-serif'>Add blog</h1>
+            <h1 className='text-5xl lg:text-6xl text-center pt-28 mb-8 uppercase font-serif'>A
+              <span className='text-2xl lg:text-4xl'>
+                <Typewriter
+                    words={["dd blog"]}
+                    loop={false}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={150}
+                    deleteSpeed={100}
+                    delaySpeed={1000}
+                />
+              </span>
+            </h1>
             <div className='w-11/12 mx-auto flex justify-center mb-8'>
                 <form onSubmit={handleAddJob}>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">

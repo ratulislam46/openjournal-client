@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaPlane, FaCoffee, FaBriefcase } from "react-icons/fa";
 import { MdOutlineHealthAndSafety, MdOutlineStyle } from "react-icons/md";
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const Services = [
     {
@@ -32,8 +34,20 @@ const Services = [
 
 const Cards = () => {
     return (
-        <section className="mb-25 mt-15 ">
-            <h2 className="text-3xl font-bold mb-10">Browse Topics</h2>
+        <section>
+            <h2 className="text-5xl lg:text-6xl font-serif text-center uppercase mb-10">B
+                <span className='text-2xl lg:text-4xl'>
+                <Typewriter
+                    words={["rowse Topics"]}
+                    loop={false}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={150}
+                    deleteSpeed={100}
+                    delaySpeed={1000}
+                />
+                </span>
+            </h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 {Services.map(service => (
                     <div

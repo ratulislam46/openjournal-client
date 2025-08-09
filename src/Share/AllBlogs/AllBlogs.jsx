@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import ShowAllBlogs from './ShowAllBlogs';
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const AllBlogs = () => {
 
@@ -19,7 +21,19 @@ const AllBlogs = () => {
 
     return (
         <div className='pb-16 pt-10'>
-            <h1 className='text-5xl lg:text-6xl text-center mt-16 mb-8 uppercase font-serif'>All blogs</h1>
+            <h1 className='text-5xl lg:text-6xl text-center mt-16 mb-8 uppercase font-serif'>A
+                <span className='text-2xl lg:text-4xl'>
+                    <Typewriter
+                        words={["ll blogs"]}
+                        loop={false}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={150}
+                        deleteSpeed={100}
+                        delaySpeed={1000}
+                    />
+                </span>
+            </h1>
 
             {/* search input  */}
             <div className='my-8 text-center'>

@@ -1,5 +1,7 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const NewLetter = () => {
 
@@ -12,9 +14,21 @@ const NewLetter = () => {
     return (
         <div className='py-20 pt-10'>
             <div data-aos="zoom-in-right" className='w-11/12 mx-auto'>
-                <h1 className='text-5xl lg:text-6xl font-serif text-center uppercase'>News letter</h1>
+                <h1 className='text-5xl lg:text-6xl font-serif uppercase text-center'>N
+                    <span className='text-2xl lg:text-4xl'>
+                        <Typewriter
+                            words={["ews letter"]}
+                            loop={false}
+                            cursor
+                            cursorStyle="_"
+                            typeSpeed={150}
+                            deleteSpeed={100}
+                            delaySpeed={1000}
+                        />
+                    </span>
+                </h1>
                 <form onSubmit={handleNewsLetter} className='mt-16'>
-                    <input type="email" className='input border-white w-[67%] py-8' required />
+                    <input type="email" className='input border-white w-[67%] py-8' placeholder='Enter Your Email' required />
                     <input type="submit" value="Submit" className='btn bg-secondary text-white pb-10 pt-6 w-[30%]' />
                 </form>
             </div>

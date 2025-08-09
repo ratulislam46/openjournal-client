@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const Talk = () => {
     return (
-        <div className='py-16'>
+        <div>
             <div className='px-2 lg:px-0'>
                 <div className='lg:flex justify-between items-center my-24'>
                     <div data-aos="fade-right" className=' space-y-5'>

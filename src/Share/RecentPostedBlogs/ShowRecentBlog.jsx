@@ -52,10 +52,10 @@ const ShowRecentBlog = ({ blog }) => {
                     <div className='flex gap-4'>
 
                         {/* details button  */}
-                        <Link to={`/blog_details/${_id}`} type="button" className="btn btn-info w-[50%]">Details</Link>
+                        <Link to={`/blog_details/${_id}`} type="button" className="btn btn-outline btn-info w-[50%]">Details</Link>
 
                         {/* wishlist button  */}
-                        <button onClick={() => handleWishList(_id)} type="button" className="btn btn-secondary w-[50%]">Wishlist</button>
+                        <button onClick={() => handleWishList(_id)} type="button" className="btn btn-outline btn-success w-[50%]">Wishlist</button>
                     </div>
                 </div>
             </div>

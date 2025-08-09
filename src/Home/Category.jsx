@@ -1,5 +1,6 @@
 import React from 'react';
 import Marquee from "react-fast-marquee";
+import { Typewriter } from 'react-simple-typewriter'
 
 const CategoriesList = [
     { id: 1, title: "Travel" },
@@ -12,10 +13,21 @@ const CategoriesList = [
 const Category = () => {
     return (
         <div>
-            <section className="pt-16 px-4 md:px-10">
-                <div className="text-center mb-10">
-                    <h2 className="text-5xl lg:text-6xl font-serif text-center mb-12">
-                        We've logs in different categories.
+            <section className="px-4 md:px-10">
+                <div className="text-center mb-16">
+                    <h2 className="text-5xl lg:text-6xl font-serif text-center uppercase mb-12">
+                        W
+                        <span className='text-2xl lg:text-4xl'>
+                            <Typewriter
+                                words={["e've logs in different categories"]}
+                                loop={false}
+                                cursor
+                                cursorStyle="_"
+                                typeSpeed={150}
+                                deleteSpeed={100}
+                                delaySpeed={1000}
+                            />
+                        </span>
                     </h2>
                 </div>
 

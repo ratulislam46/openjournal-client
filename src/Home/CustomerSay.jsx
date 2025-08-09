@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const customers = [
     {
@@ -55,7 +57,7 @@ const CustomerSay = () => {
 
     const renderCard = (customer, type, isHiddenOnMobile = false) => {
         const comment = (
-            <p className="text-gray-600 italic text-center px-4 pt-4">
+            <p className="text-gray-600 italic text-center px-4">
                 “{customer.comment}”
             </p>
         );
@@ -108,7 +110,20 @@ const CustomerSay = () => {
 
             </div>
             {/* title & desciption  */}
-            <h2 className="text-5xl lg:text-6xl font-serif text-center mb-6">What our customers are sayings</h2>
+            <h2 className="text-5xl lg:text-6xl font-serif text-center mb-6">W
+                <span className='text-2xl lg:text-4xl uppercase'>
+                    <Typewriter
+                        words={["hat our customers are sayings"]}
+                        loop={false}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={150}
+                        deleteSpeed={100}
+                        delaySpeed={1000}
+                    />
+                </span>
+
+            </h2>
             <p className="text-center mb-10 text-gray-500">
                 Enhance posture, mobility, and well-being effortlessly with Posture Pro. Achieve proper alignment, reduce pain, and strengthen your body with ease!
             </p>
