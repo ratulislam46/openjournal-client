@@ -8,13 +8,13 @@ const Services = [
     {
         "id": 1,
         "title": "Travel",
-        "details": "Explore hidden gems and unforgettable adventures. Stories from roads less traveled.",
+        "details": "This website is really easy to use and the UI looks amazing. Great job!",
         "icon": <FaPlane className="text-4xl text-blue-600 mb-4"></FaPlane>
     },
     {
         "id": 2,
         "title": "Lifestyle",
-        "details": "Daily inspiration for mindful living. Balance, wellness, and joyful routines.",
+        "details": "I love the responsive design. It works perfectly on my phone and laptop",
         "icon": <MdOutlineStyle className="text-4xl text-green-600 mb-4"></MdOutlineStyle>
     },
     {
@@ -26,7 +26,7 @@ const Services = [
     {
         "id": 4,
         "title": "Health",
-        "details": "Fitness, nutrition, and mental wellness. Your guide to a healthier life.",
+        "details": "The dark mode feature is a nice touch! It’s easy on the eyes..",
         "icon": <MdOutlineHealthAndSafety className="text-4xl text-yellow-600 mb-4"></MdOutlineHealthAndSafety>
     }
 ];
