@@ -50,8 +50,8 @@ const ShowWishlist = ({ wishlist, wishlists, setWishlists }) => {
 
     return (
         <div>
-            <div className='w-11/12 mx-auto'>
-                <ul className="list bg-base-100 rounded-box shadow-md">
+            <div className='container mx-auto'>
+                <ul className="list bg-base-100 rounded-box shadow-md border border-gray-200">
                     <li className="list-row">
                         <div><img className="size-10 rounded-box" src={image} /></div>
                         <div>
@@ -64,9 +64,9 @@ const ShowWishlist = ({ wishlist, wishlists, setWishlists }) => {
                         <p className="list-col-wrap text-xl">
                             {shortdescription}
                         </p>
-                        <div className='flex  gap-2'>
-                            <Link to={`/blog_details/${id}`} className='btn btn-info'>Details</Link>
-                            <button onClick={() => handleRemove(_id)} className='btn btn-error text-white'>Remove</button>
+                        <div className='flex gap-2'>
+                            <Link to={`/blog_details/${id}`} className='btn btn-outline btn-info'>Details</Link>
+                            <button onClick={() => handleRemove(_id)} className='btn btn-outline btn-error'>Remove</button>
                         </div>
                     </li>
                 </ul>

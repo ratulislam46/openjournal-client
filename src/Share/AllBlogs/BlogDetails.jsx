@@ -55,8 +55,8 @@ const BlogDetails = () => {
 
     return (
         <div>
-            <div className='w-11/12 mx-auto mt-20 mb-16'>
-                <div className='bg-amber-100'>
+            <div className='container mx-auto mt-28 mb-16 '>
+                <div className='bg-base-100 border border-gray-200'>
                     <div className="lg:flex shadow-sm">
                         <div className='lg:w-[50%]'>
                             <img
@@ -66,8 +66,8 @@ const BlogDetails = () => {
                         <div className="lg:w-[50%] flex flex-col justify-center px-2 py-10 lg:py-0 space-y-3">
                             <p className='text-xl text-orange-500 '>{category}</p>
                             <h2 className="card-title text-4xl">{title}</h2>
-                            <p className='text-xl'>{shortdescription}</p>
-                            <p className='text-gray-600'>{description}</p>
+                            <p className='text-xl text-base-content'>{shortdescription}</p>
+                            <p className='text-base-content'>{description}</p>
                             <div className="flex justify-between lg:pr-10 mt-8">
                                 <div>
                                     <h4>Posted by: <span className='text-blue-600'>{email}</span></h4>
@@ -76,7 +76,7 @@ const BlogDetails = () => {
                                     {
                                         (user?.email === email) && <Link
                                             to={`/blog_update/${_id}`}
-                                            className="btn btn-secondary"
+                                            className="btn btn-outline btn-error"
                                         >Update</Link>
                                     }
                                 </div>
@@ -84,7 +84,7 @@ const BlogDetails = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-11/12 mx-auto mt-16'>
+                <div className='container mx-auto mt-16'>
                     {
                         email !== user?.email ?
                             <form onSubmit={handleComment}>

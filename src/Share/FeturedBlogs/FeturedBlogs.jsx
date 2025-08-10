@@ -39,7 +39,7 @@ const FeturedBlogs = () => {
 
     return (
         <div className='pb-16 pt-24'>
-            <div className='w-11/12 mx-auto'>
+            <div className='container mx-auto'>
                 <DataTable
                     columns={tableData}
                     data={feturedBlogs}

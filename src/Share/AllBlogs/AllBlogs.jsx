@@ -42,7 +42,7 @@ const AllBlogs = () => {
                     className='input input-xl'
                     placeholder='Search . . .' />
             </div>
-            <div className='w-11/12 mx-auto'>
+            <div className='container mx-auto'>
                 <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                     {
                         blogs?.map(blog => <ShowAllBlogs blog={blog} key={blog._id}></ShowAllBlogs>)

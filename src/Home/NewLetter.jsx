@@ -28,8 +28,8 @@ const NewLetter = () => {
                     </span>
                 </h1>
                 <form onSubmit={handleNewsLetter} className='mt-16'>
-                    <input type="email" className='input border-white w-[67%] py-8' placeholder='Enter Your Email' required />
-                    <input type="submit" value="Submit" className='btn bg-secondary text-base-content pb-10 pt-6 w-[30%]' />
+                    <input type="email" className='input w-[67%] py-8' placeholder='Enter Your Email' required />
+                    <input type="submit" value="Submit" className='btn btn-outline btn-error pb-10 pt-6 w-[30%]' />
                 </form>
             </div>
         </div>

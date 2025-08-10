@@ -6,38 +6,38 @@ import { Typewriter } from 'react-simple-typewriter'
 const customers = [
     {
         id: 1,
-        name: "Mrs. Lamia",
+        name: "Midul Islam Rigan",
         post: "Sr. Doctor",
         comment: "This product completely changed the way we work. Highly recommended!",
-        image: "https://randomuser.me/api/portraits/women/44.jpg"
+        image: "https://i.postimg.cc/Wz5g0zc6/FB-IMG-1593317943446.jpg"
     },
     {
         id: 2,
-        name: "Rahman Sifat",
+        name: "Ratul Islam",
         post: "Software Engineer",
         comment: "Very intuitive and easy to use. Customer support was excellent.",
-        image: "https://randomuser.me/api/portraits/men/36.jpg"
+        image: "https://i.postimg.cc/NFD7bbmX/IMG-20230112-WA0006-01.jpg"
     },
     {
         id: 3,
-        name: "Rahi Islam",
+        name: "Sadhin Khan",
         post: "Project Coordinator",
         comment: "We saved a lot of time after using this service. Great value!",
-        image: "https://randomuser.me/api/portraits/women/68.jpg"
+        image: "https://i.postimg.cc/s2WLKdXZ/IMG-20211216-WA0076-01.jpg"
     },
     {
         id: 4,
         name: "Siam Ahmed",
         post: "UI/UX Designer",
         comment: "The design and functionality exceeded my expectations. Great work!",
-        image: "https://randomuser.me/api/portraits/men/54.jpg"
+        image: "https://i.postimg.cc/vT4HSZ6v/IMG-20210813-WA0048-02.jpg"
     },
     {
         id: 5,
-        name: "Maria Islam",
+        name: "Syed Zakaria",
         post: "Operations Head",
         comment: "Smooth experience from start to finish. Would definitely use again.",
-        image: "https://randomuser.me/api/portraits/women/24.jpg"
+        image: "https://i.postimg.cc/d3gtMc2c/IMG20220611175555-01.jpg"
     }
 ];
 
@@ -88,7 +88,7 @@ const CustomerSay = () => {
 
         return (
             <div
-                className={`card bg-base-100 shadow-md w-72 transition-all duration-300 ${cardStyle} ${responsiveClass}`}
+                className={`card bg-base-100 border border-gray-200 shadow-md w-72 transition-all duration-300 ${cardStyle} ${responsiveClass}`}
             >
                 <div className="p-8">
                     <div className='pb-4'>

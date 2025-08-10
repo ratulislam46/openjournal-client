@@ -34,13 +34,13 @@ const ShowAllBlogs = ({ blog }) => {
 
     return (
         <div>
-            <div className="rounded-lg shadow-lg dark:bg-gray-50 dark:text-gray-800 flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div className="rounded-lg  border border-gray-200 shadow-lg flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 {/* Blog Image */}
                 <div className="aspect-w-16 aspect-h-9 overflow-hidden">
                     <img
                         src={image}
                         alt={title}
-                        className="object-cover w-full h-full rounded-t-lg dark:bg-gray-500 transition-transform duration-500 hover:scale-105"
+                        className="object-cover w-full h-full rounded-t-lg transition-transform duration-500 hover:scale-105"
                         loading="lazy"
                     />
                 </div>
@@ -52,7 +52,7 @@ const ShowAllBlogs = ({ blog }) => {
                         <h2 className="text-xl md:text-2xl font-semibold line-clamp-2" title={title}>
                             {title}
                         </h2>
-                        <p className="text-gray-600 dark:text-gray-700 line-clamp-3" title={shortdescription}>
+                        <p className="line-clamp-3" title={shortdescription}>
                             {shortdescription}
                         </p>
                     </div>

@@ -35,7 +35,7 @@ const UpdateBlog = () => {
     }
 
     return (
-        <div className="min-h-screen bg-base-100 py-12">
+        <div className="min-h-screen bg-base-100 pb-12 pt-28">
             <h1 className="text-3xl md:text-5xl text-center mb-10 uppercase font-serif">
                 Update Blog
             </h1>
@@ -76,7 +76,7 @@ const UpdateBlog = () => {
                             defaultValue={email}
                             readOnly
                             name="email"
-                            className="input input-bordered w-full bg-gray-100"
+                            className="input input-bordered w-full bg-base-100"
                         />
                     </div>
 
@@ -121,7 +121,7 @@ const UpdateBlog = () => {
                         ></textarea>
                     </div>
 
-                    <button className="btn btn-neutral w-full">Update Blog</button>
+                    <button className="btn btn-primary w-full">Update Blog</button>
                 </form>
             </div>
         </div>

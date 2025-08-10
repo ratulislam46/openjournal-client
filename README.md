@@ -21,4 +21,4 @@ A fully responsive blog application built with **React**, styled using **Tailwin
 - Frontend: React, Tailwind CSS, DaisyUI, React Router  
 - Backend: Node.js, Express.js, MongoDB  
 - Authentication: Firebase Authentication  
-- Deployment: Firebase Hosting  
+- Deployment: Firebase Hosting  ;
