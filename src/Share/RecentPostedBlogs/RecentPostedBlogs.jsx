@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ShowRecentBlog from './ShowRecentBlog';
 import { Typewriter } from 'react-simple-typewriter'
+import Loading from '../Loading/Loading';
 
 
 const RecentPostedBlogs = () => {
 
-    const [blogs, setBlogs] = useState([])
+    const [blogs, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch('https://openjournal-server.vercel.app/blogs')
@@ -13,8 +15,11 @@ const RecentPostedBlogs = () => {
             .then(data => {
                 // console.log(data);
                 setBlogs(data.reverse().slice(0, 8))
+                setLoading(false)
             })
     }, [])
+
+    if (loading) return <Loading></Loading>
 
     return (
         <div className='mt-10 px-2 lg:px-0'>
@@ -34,7 +39,12 @@ const RecentPostedBlogs = () => {
             <div className='my-16'>
                 <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                     {
-                        blogs?.map(blog => <ShowRecentBlog blog={blog} key={blog._id} ></ShowRecentBlog>)
+                        blogs?.map(blog =>
+                            <ShowRecentBlog
+                                key={blog._id}
+                                blog={blog}
+                            >
+                            </ShowRecentBlog>)
                     }
                 </div>
             </div>

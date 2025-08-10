@@ -34,7 +34,7 @@ const Services = [
 
 const Cards = () => {
     return (
-        <section>
+        <section className='px-2 lg:px-0'>
             <h2 className="text-5xl lg:text-6xl font-serif text-center uppercase mb-10">B
                 <span className='text-2xl lg:text-4xl'>
                 <Typewriter
