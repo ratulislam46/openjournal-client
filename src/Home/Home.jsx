@@ -21,7 +21,7 @@ const Home = () => {
             <section>
                 <RecentPostedBlogs></RecentPostedBlogs>
             </section>
-            <section>
+            <section className='hidden lg:block'>
                 <Agency></Agency>
             </section>
             {/* <section>

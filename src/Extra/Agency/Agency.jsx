@@ -31,9 +31,6 @@ const Agency = () => {
                             <p className='flex gap-1 font-semibold items-center'> <GoArrowRight className='text-sky-500' /> Real-Time Itinerary Updates</p>
                             <p className='flex gap-1 font-semibold items-center'> <GoArrowRight className='text-sky-500' /> Flexible, Hassle-Free Bookings</p>
                         </div>
-                        <div >
-                            <button className='flex items-center gap-4 px-6 text-white font-semibold text-xl py-4 rounded-3xl border-3 bg-sky-500 hover:bg-sky-600'>More About Travil <span><FaArrowRight /></span></button>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -40,7 +40,7 @@ const Navbar = () => {
     }, [theme]);
 
     return (
-        <div className='shadow-sm fixed top-0 left-0 w-screen z-50 bg-red-100 px-4 md:px-6 lg:px-8'>
+        <div className='shadow-sm fixed top-0 left-0 w-full z-50 bg-red-100 '>
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -58,6 +58,17 @@ const Navbar = () => {
                     <Link to='/' className="text-xl h-1 flex items-center">
                         <img src={logo} alt="logo" className='w-24' />
                     </Link>
+
+                    {/* Right side toggle button */}
+                    <div className="flex-none ml-4 lg:ml-8">
+                        <button
+                            className="px-2 py-1 rounded-md bg-base-100"
+                            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                        >
+                            {theme === "light" ? "🌑 Dark" : "🔆 Light"}
+                        </button>
+                    </div>
+
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-black">
@@ -65,16 +76,6 @@ const Navbar = () => {
                             links
                         }
                     </ul>
-                </div>
-
-                {/* Right side toggle button */}
-                <div className="flex-none">
-                    <button
-                        className="btn btn-soft text-xl"
-                        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                    >
-                        {theme === "light" ? "🌑 Dark" : "🔆 Light"}
-                    </button>
                 </div>
 
                 <div className="navbar-end">

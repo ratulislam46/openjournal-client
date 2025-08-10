@@ -35,50 +35,93 @@ const UpdateBlog = () => {
     }
 
     return (
-        <div>
-            <h1 className='text-5xl lg:text-6xl text-center mt-16 mb-8 uppercase font-serif'>Add blog</h1>
-            <div className='w-11/12 mx-auto flex justify-center mb-8'>
-                <form onSubmit={handleBlogUpdate}>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+        <div className="min-h-screen bg-base-100 py-12">
+            <h1 className="text-3xl md:text-5xl text-center mb-10 uppercase font-serif">
+                Update Blog
+            </h1>
 
-                        {/* blog title  */}
-                        <label className="label">Blog Title</label>
-                        <input type="text" name='title' defaultValue={title} className="input" placeholder="Blog Title" />
+            <div className="w-full max-w-3xl mx-auto px-4">
+                <form onSubmit={handleBlogUpdate} className="space-y-6">
+                    {/* Blog Title */}
+                    <div>
+                        <label className="label font-semibold">Blog Title</label>
+                        <input
+                            type="text"
+                            name="title"
+                            defaultValue={title}
+                            className="input input-bordered w-full"
+                            placeholder="Blog Title"
+                            required
+                        />
+                    </div>
 
-                        {/* image url  */}
-                        <label className="label">Image URL</label>
-                        <input type="text" name='image' defaultValue={image} className="input" placeholder="Image URL" />
+                    {/* Image URL */}
+                    <div>
+                        <label className="label font-semibold">Image URL</label>
+                        <input
+                            type="text"
+                            name="image"
+                            defaultValue={image}
+                            className="input input-bordered w-full"
+                            placeholder="Image URL"
+                            required
+                        />
+                    </div>
 
-                        {/* email  */}
-                        <label className="label">Email</label>
-                        <input type="email" defaultValue={email} readOnly name='email' className="input" placeholder="Email" />
+                    {/* Email */}
+                    <div>
+                        <label className="label font-semibold">Email</label>
+                        <input
+                            type="email"
+                            defaultValue={email}
+                            readOnly
+                            name="email"
+                            className="input input-bordered w-full bg-gray-100"
+                        />
+                    </div>
 
-                        {/* blog category  */}
-                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                            <legend className="fieldset-legend">Blog Category</legend>
-                            <select name='category' defaultValue={category} className="select">
-                                <option disabled={true}>Blog Category</option>
-                                <option>Lifestyle</option>
-                                <option>Travel</option>
-                                <option>Programing</option>
-                                <option>career-tips</option>
-                            </select>
-                        </fieldset>
+                    {/* Blog Category */}
+                    <div>
+                        <label className="label font-semibold">Blog Category</label>
+                        <select
+                            name="category"
+                            defaultValue={category}
+                            className="select select-bordered w-full"
+                            required
+                        >
+                            <option disabled>Blog Category</option>
+                            <option>Lifestyle</option>
+                            <option>Travel</option>
+                            <option>Programming</option>
+                            <option>Career-tips</option>
+                        </select>
+                    </div>
 
-                        {/* long discription  */}
-                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                            <legend className="fieldset-legend">Description</legend>
-                            <textarea className="textarea" name='description' defaultValue={description} placeholder="Description ...."></textarea>
-                        </fieldset>
+                    {/* Description */}
+                    <div>
+                        <label className="label font-semibold">Description</label>
+                        <textarea
+                            className="textarea textarea-bordered w-full"
+                            name="description"
+                            defaultValue={description}
+                            placeholder="Description ..."
+                            required
+                        ></textarea>
+                    </div>
 
-                        {/* short discription  */}
-                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                            <legend className="fieldset-legend">Short Description</legend>
-                            <textarea className="textarea" name='shortdescription' defaultValue={shortdescription} placeholder="Short Description ..."></textarea>
-                        </fieldset>
+                    {/* Short Description */}
+                    <div>
+                        <label className="label font-semibold">Short Description</label>
+                        <textarea
+                            className="textarea textarea-bordered w-full"
+                            name="shortdescription"
+                            defaultValue={shortdescription}
+                            placeholder="Short Description ..."
+                            required
+                        ></textarea>
+                    </div>
 
-                        <button className="btn btn-neutral mt-4">Add Blog</button>
-                    </fieldset>
+                    <button className="btn btn-neutral w-full">Update Blog</button>
                 </form>
             </div>
         </div>
