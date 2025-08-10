@@ -20,10 +20,10 @@ const Agency = () => {
                         <h1 className='text-3xl lg:text-5xl font-bold'>
                             Our Journey Memorable Adventures Worldwide
                         </h1>
-                        <h4 className='text-gray-500'>
+                        <h4 className='text-base-content'>
                             We offer carefully curated destinations and tours that capture the true essence of location, ensuring you experience. Our attraction pass save you more than buying individual tickets for your tour package system.
                         </h4>
-                        <h2 className='font-semibold text-xl  border-l-4 border-sky-700 py-8 px-6 bg-red-100 rounded-r-lg'>
+                        <h2 className='font-semibold text-xl text-gray-700 border-l-4 border-sky-700 py-8 px-6 bg-red-100 rounded-r-lg'>
                             “Etiam ac tortor id purus commodo vulputate. Vestibulum porttitor erat felis and sed vehicula tortor malesuada gravida”
                         </h2>
                         <div>

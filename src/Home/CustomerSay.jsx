@@ -6,35 +6,35 @@ import { Typewriter } from 'react-simple-typewriter'
 const customers = [
     {
         id: 1,
-        name: "Alice Johnson",
-        post: "Marketing Manager",
+        name: "Mrs. Lamia",
+        post: "Sr. Doctor",
         comment: "This product completely changed the way we work. Highly recommended!",
         image: "https://randomuser.me/api/portraits/women/44.jpg"
     },
     {
         id: 2,
-        name: "Rahim Uddin",
+        name: "Rahman Sifat",
         post: "Software Engineer",
         comment: "Very intuitive and easy to use. Customer support was excellent.",
         image: "https://randomuser.me/api/portraits/men/36.jpg"
     },
     {
         id: 3,
-        name: "Sophie Lee",
+        name: "Rahi Islam",
         post: "Project Coordinator",
         comment: "We saved a lot of time after using this service. Great value!",
         image: "https://randomuser.me/api/portraits/women/68.jpg"
     },
     {
         id: 4,
-        name: "Tanvir Hasan",
+        name: "Siam Ahmed",
         post: "UI/UX Designer",
         comment: "The design and functionality exceeded my expectations. Great work!",
         image: "https://randomuser.me/api/portraits/men/54.jpg"
     },
     {
         id: 5,
-        name: "Maria Gomez",
+        name: "Maria Islam",
         post: "Operations Head",
         comment: "Smooth experience from start to finish. Would definitely use again.",
         image: "https://randomuser.me/api/portraits/women/24.jpg"
@@ -57,7 +57,7 @@ const CustomerSay = () => {
 
     const renderCard = (customer, type, isHiddenOnMobile = false) => {
         const comment = (
-            <p className="text-gray-600 italic text-center px-4">
+            <p className="text-base-content italic text-center px-4">
                 “{customer.comment}”
             </p>
         );
@@ -72,8 +72,8 @@ const CustomerSay = () => {
                 />
                 {/* Name and Post right */}
                 <div className="text-left">
-                    <h2 className="font-semibold text-lg text-gray-800">{customer.name}</h2>
-                    <p className="text-sm text-gray-500">{customer.post}</p>
+                    <h2 className="font-semibold text-lg text-base-content">{customer.name}</h2>
+                    <p className="text-sm text-base-content">{customer.post}</p>
                 </div>
             </div>
         );
@@ -124,7 +124,7 @@ const CustomerSay = () => {
                 </span>
 
             </h2>
-            <p className="text-center mb-10 text-gray-500">
+            <p className="text-center mb-10 text-base-content">
                 Enhance posture, mobility, and well-being effortlessly with Posture Pro. Achieve proper alignment, reduce pain, and strengthen your body with ease!
             </p>
 

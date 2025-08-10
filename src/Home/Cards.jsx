@@ -54,11 +54,11 @@ const Cards = () => {
                         data-aos="fade-up"
                         service={service}
                         key={service.id}
-                        className="bg-white shadow-md rounded-2xl p-6  hover:shadow-xl"
+                        className="bg-base-100 shadow-md rounded-2xl p-6  hover:shadow-xl"
                     >
                         {service.icon}
                         <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                        <p className="text-gray-600 text-sm">{service.details}</p>
+                        <p className="text-base-content text-sm">{service.details}</p>
                     </div>
                 ))}
             </div>

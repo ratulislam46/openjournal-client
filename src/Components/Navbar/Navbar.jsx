@@ -1,12 +1,14 @@
 import { Link, NavLink } from 'react-router';
 import logo from '../../../public/logo.png'
 import { AuthContext } from '../../Auth/AuthProvider';
-import { use } from 'react';
+import { use, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 const Navbar = () => {
 
-    const { user, SignOutWithFireBase } = use(AuthContext)
+    const { user, SignOutWithFireBase } = use(AuthContext);
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
 
     const handleLogOut = () => {
         SignOutWithFireBase()
@@ -32,9 +34,14 @@ const Navbar = () => {
                 </>}
         </>
 
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
     return (
-        <div className='shadow-sm fixed top-0 left-0 w-full z-50 bg-red-100'>
-            <div className="navbar container mx-auto border">
+        <div className='shadow-sm fixed top-0 left-0 w-screen z-50 bg-red-100 px-4 md:px-6 lg:px-8'>
+            <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -53,12 +60,23 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 text-black">
                         {
                             links
                         }
                     </ul>
                 </div>
+
+                {/* Right side toggle button */}
+                <div className="flex-none">
+                    <button
+                        className="btn btn-soft text-xl"
+                        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                    >
+                        {theme === "light" ? "🌑 Dark" : "🔆 Light"}
+                    </button>
+                </div>
+
                 <div className="navbar-end">
 
                     {

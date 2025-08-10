@@ -15,7 +15,7 @@ const AddBlog = () => {
         const form = e.target;
         const formData = new FormData(form);
         const postValue = Object.fromEntries(formData.entries())
-        console.log(postValue);
+        // console.log(postValue);
 
         axios.post('https://openjournal-server.vercel.app/blogs', postValue)
             .then(res => {
@@ -27,67 +27,103 @@ const AddBlog = () => {
                 console.log(res.data);
             })
             .then(error => {
-                console.log(error);
+                console.log('error');
             })
     }
 
     return (
         <div>
-            <h1 className='text-5xl lg:text-6xl text-center pt-28 mb-8 uppercase font-serif'>A
-              <span className='text-2xl lg:text-4xl'>
-                <Typewriter
-                    words={["dd blog"]}
-                    loop={false}
-                    cursor
-                    cursorStyle="_"
-                    typeSpeed={150}
-                    deleteSpeed={100}
-                    delaySpeed={1000}
-                />
-              </span>
+            <h1 className='text-5xl lg:text-6xl text-center pt-28 pb-8 uppercase font-serif'>A
+                <span className='text-2xl lg:text-4xl'>
+                    <Typewriter
+                        words={["dd blog"]}
+                        loop={false}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={150}
+                        deleteSpeed={100}
+                        delaySpeed={1000}
+                    />
+                </span>
             </h1>
-            <div className='w-11/12 mx-auto flex justify-center mb-8'>
+            <div className="min-h-screen w-screen p-4">
                 <form onSubmit={handleAddJob}>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
 
-                        {/* blog title  */}
-                        <label className="label">Blog Title</label>
-                        <input type="text" name='title' className="input" placeholder="Blog Title" required />
+                    <fieldset className="fieldset bg-base-100 border-base-300 rounded-box border p-6 grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl mx-auto">
 
-                        {/* image url  */}
-                        <label className="label">Image URL</label>
-                        <input type="text" name='image' className="input" placeholder="Image URL" required />
+                        {/* Blog Title */}
+                        <div className="space-y-2">
+                            <label className="label">Blog Title</label>
+                            <input type="text" name='title' className="input input-bordered w-full" placeholder="Blog Title" required />
+                        </div>
 
-                        {/* email  */}
-                        <label className="label">Email</label>
-                        <input type="email" defaultValue={user?.email} readOnly name='email' className="input" placeholder="Email" />
+                        {/* Image URL */}
+                        <div className="space-y-2">
+                            <label className="label">Image URL</label>
+                            <input type="text" name='image' className="input input-bordered w-full" placeholder="Image URL" required />
+                        </div>
 
-                        {/* blog category  */}
-                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                            <legend className="fieldset-legend">Blog Category</legend>
-                            <select name='category' defaultValue="Pick a color" className="select">
-                                <option disabled={true}>Blog Category</option>
-                                <option>Lifestyle</option>
-                                <option>Travel</option>
-                                <option>Programing</option>
-                                <option>Career-tips</option>
-                                <option>Health</option>
-                            </select>
-                        </fieldset>
+                        {/* Email - Full width */}
+                        <div className="space-y-2 lg:col-span-2">
+                            <label className="label">Email</label>
+                            <input
+                                type="email"
+                                defaultValue={user?.email}
+                                readOnly
+                                name='email'
+                                className="input input-bordered w-full"
+                                placeholder="Email"
+                            />
+                        </div>
 
-                        {/* long discription  */}
-                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                            <legend className="fieldset-legend">Description</legend>
-                            <textarea className="textarea" name='description' placeholder="Description ...."></textarea>
-                        </fieldset>
+                        {/* Blog Category */}
+                        <div className="space-y-2">
+                            <fieldset className="fieldset bg-base-100 border-base-300 rounded-box border p-4 w-full">
+                                <legend className="fieldset-legend px-2">Blog Category</legend>
+                                <select name='category' className="select select-bordered w-full">
+                                    <option disabled selected>Select a category</option>
+                                    <option>Lifestyle</option>
+                                    <option>Travel</option>
+                                    <option>Programing</option>
+                                    <option>Career-tips</option>
+                                    <option>Health</option>
+                                </select>
+                            </fieldset>
+                        </div>
 
-                        {/* short discription  */}
-                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                            <legend className="fieldset-legend">Short Description</legend>
-                            <textarea className="textarea" name='shortdescription' placeholder="Short Description ..."></textarea>
-                        </fieldset>
+                        {/* Empty space to balance layout */}
+                        <div className="hidden lg:block"></div>
 
-                        <button className="btn btn-neutral mt-4">Add Blog</button>
+                        {/* Long Description - Full width */}
+                        <div className="space-y-2 lg:col-span-2">
+                            <fieldset className="fieldset bg-base-100 border-base-300 rounded-box border p-4 w-full">
+                                <legend className="fieldset-legend px-2">Description</legend>
+                                <textarea
+                                    className="textarea textarea-bordered w-full min-h-[150px]"
+                                    name='description'
+                                    placeholder="Description ...."
+                                ></textarea>
+                            </fieldset>
+                        </div>
+
+                        {/* Short Description - Full width */}
+                        <div className="space-y-2 lg:col-span-2">
+                            <fieldset className="fieldset bg-base-100 border-base-300 rounded-box border p-4 w-full">
+                                <legend className="fieldset-legend px-2">Short Description</legend>
+                                <textarea
+                                    className="textarea textarea-bordered w-full min-h-[100px]"
+                                    name='shortdescription'
+                                    placeholder="Short Description ..."
+                                ></textarea>
+                            </fieldset>
+                        </div>
+
+                        {/* Submit Button - Full width */}
+                        <div className="lg:col-span-2">
+                            <button className="btn btn-primary w-full mt-2">
+                                Add Blog
+                            </button>
+                        </div>
                     </fieldset>
                 </form>
             </div>
