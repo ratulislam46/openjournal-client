@@ -3,6 +3,8 @@ import logo from '../../../public/logo.png'
 import { AuthContext } from '../../Auth/AuthProvider';
 import { use, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { MdDarkMode } from "react-icons/md";
+import { MdLightMode } from "react-icons/md";
 
 const Navbar = () => {
 
@@ -40,7 +42,7 @@ const Navbar = () => {
     }, [theme]);
 
     return (
-        <div className='shadow-sm fixed top-0 left-0 w-full z-50 bg-red-100 '>
+        <div className='shadow-sm fixed top-0 left-0 w-full z-50 border-b-2 border-primary rounded-b-xl backdrop-blur-2xl'>
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -60,18 +62,18 @@ const Navbar = () => {
                     </Link>
 
                     {/* Right side toggle button */}
-                    <div className="flex-none ml-4 lg:ml-8">
+                    <div className="flex-none ml-8 md:ml-4">
                         <button
                             className="px-2 py-1 rounded-md bg-base-100"
                             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
                         >
-                            {theme === "light" ? "🌑 Dark" : "🔆 Light"}
+                            {theme === "light" ? <MdDarkMode size={28} /> : <MdLightMode size={28} />}
                         </button>
                     </div>
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 text-black">
+                    <ul className="menu menu-horizontal px-1 text-base-content">
                         {
                             links
                         }

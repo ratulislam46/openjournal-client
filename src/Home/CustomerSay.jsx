@@ -103,7 +103,7 @@ const CustomerSay = () => {
     };
 
     return (
-        <div data-aos="zoom-in-right" className="flex flex-col items-center justify-center pt-0 lg:pt-6 pb-20">
+        <div className="flex flex-col items-center justify-center pt-0 lg:pt-6 pb-20">
 
             {/* image  */}
             <div>
@@ -124,12 +124,12 @@ const CustomerSay = () => {
                 </span>
 
             </h2>
-            <p className="text-center mb-10 text-base-content">
+            <p data-aos="zoom-in-up" className="text-center mb-10 text-base-content">
                 Enhance posture, mobility, and well-being effortlessly with Posture Pro. Achieve proper alignment, reduce pain, and strengthen your body with ease!
             </p>
 
             {/* Card Carousel */}
-            <div className="flex items-center justify-center gap-4 flex-wrap mb-8">
+            <div  data-aos="zoom-in-up" className="flex items-center justify-center gap-4 flex-wrap mb-8">
                 {/* Hide on mobile, show on md+ */}
                 {renderCard(customers[prevIndex], 'side', true)}
                 {renderCard(customers[currentIndex], 'center')}

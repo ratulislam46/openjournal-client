@@ -13,7 +13,7 @@ const NewLetter = () => {
 
     return (
         <div className='py-20 pt-10'>
-            <div data-aos="zoom-in-right" className='w-11/12 mx-auto'>
+            <div data-aos="zoom-in-up" className='w-11/12 mx-auto'>
                 <h1 className='text-5xl lg:text-6xl font-serif uppercase text-center'>N
                     <span className='text-2xl lg:text-4xl'>
                         <Typewriter
