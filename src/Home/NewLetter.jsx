@@ -1,6 +1,5 @@
 import React from 'react';
 import toast from 'react-hot-toast';
-import { Typewriter } from 'react-simple-typewriter'
 
 
 const NewLetter = () => {
@@ -17,17 +16,6 @@ const NewLetter = () => {
                 className='w-11/12 mx-auto py-16 rounded-md bg-primary/5 px-6 lg:px-36'>
                 <h1 className='text-xl md:text-3xl lg:text-5xl font-serif uppercase text-center'>
                     Subscribe Newsletter
-                    {/* <span className='text-2xl lg:text-4xl'>
-                        <Typewriter
-                            words={["ews letter"]}
-                            loop={false}
-                            cursor
-                            cursorStyle="_"
-                            typeSpeed={150}
-                            deleteSpeed={100}
-                            delaySpeed={1000}
-                        />
-                    </span> */}
                 </h1>
                 <p className='text-center mt-2 text-base-content/60 text-xs md:text-md lg:text-xl'>Join our readers’ community and never miss a new post, story, or update from Open Journal.</p>
                 <form onSubmit={handleNewsLetter}
