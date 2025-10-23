@@ -113,9 +113,10 @@ const Navbar = () => {
                                                 )}
                                             </div>
 
-                                            <p className="text-center font-medium mb-2">
+                                            <p className="text-center text-2xl font-medium mb-2">
                                                 {user?.displayName || user?.email || "User"}
                                             </p>
+                                            <div className='border mb-4'></div>
 
                                             <Link
                                                 to="/my-profile"

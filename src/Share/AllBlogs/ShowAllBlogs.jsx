@@ -61,7 +61,7 @@ const ShowAllBlogs = ({ blog }) => {
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
                         <Link
                             to={`/blog_details/${_id}`}
-                            className="btn btn-outline btn-info flex-1 text-center py-2 px-4 transition-colors hover:bg-blue-50"
+                            className="btn btn-outline btn-info flex-1 text-center py-2 px-4 transition-colors"
                             aria-label={`View details of ${title}`}
                         >
                             Details
@@ -69,7 +69,7 @@ const ShowAllBlogs = ({ blog }) => {
 
                         <button
                             onClick={() => handleWishList(_id)}
-                            className="btn btn-outline btn-success flex-1 py-2 px-4 transition-colors hover:bg-green-50"
+                            className="btn btn-outline btn-success flex-1 py-2 px-4 transition-colors"
                             aria-label={`Add ${title} to wishlist`}
                         >
                             Wishlist

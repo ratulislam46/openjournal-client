@@ -19,7 +19,7 @@ const NewLetter = () => {
             viewport={{ once: true, amount: 0.3 }} // <--- animation only once
             transition={{ duration: 0.8 }}
         >
-            <div className="w-11/12 mx-auto py-16 rounded-md bg-primary/5 px-6 lg:px-36">
+            <div className="py-16 rounded-md bg-primary/5 px-6 lg:px-36">
                 <motion.h1
                     className="text-xl md:text-3xl lg:text-5xl font-serif uppercase text-center"
                     initial={{ scale: 0.8, opacity: 0 }}
