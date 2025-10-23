@@ -3,12 +3,12 @@ import Banner from './Banner';
 import NewLetter from './NewLetter';
 import RecentPostedBlogs from '../Share/RecentPostedBlogs/RecentPostedBlogs';
 import Talk from '../Extra/Talk/Talk';
-import Text from './Text';
 import Agency from '../Extra/Agency/Agency';
 import CustomerSay from './CustomerSay';
 import Category from './Category';
 import Cards from './Cards';
 import FeaturesSection from './FeturesSection';
+import StatsSection from './StatSection';
 
 const Home = () => {
     return (
@@ -25,9 +25,6 @@ const Home = () => {
             <section className='hidden lg:block'>
                 <Agency></Agency>
             </section>
-            {/* <section>
-                <Text></Text>
-            </section> */}
             <section>
                 <FeaturesSection />
             </section>
@@ -39,6 +36,9 @@ const Home = () => {
             </section>
             <section>
                 <CustomerSay></CustomerSay>
+            </section>
+            <section>
+                <StatsSection/>
             </section>
             <section>
                 <NewLetter></NewLetter>
