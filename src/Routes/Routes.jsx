@@ -13,6 +13,7 @@ import UpdateBlog from "../Share/UpdateBlog/UpdateBlog";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Wishlist from "../Share/Wishlist/Wishlist";
 import Loading from "../Share/Loading/Loading";
+import MyProfile from "../Share/Profile/MyProfile";
 
 
 export const router = createBrowserRouter([
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
             {
                 path: '/allBlogs',
                 Component: AllBlogs
+            },
+            {
+                path: '/my-profile',
+                Component: MyProfile
             },
             {
                 path: '/blog_details/:id',
