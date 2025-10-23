@@ -8,6 +8,7 @@ import Agency from '../Extra/Agency/Agency';
 import CustomerSay from './CustomerSay';
 import Category from './Category';
 import Cards from './Cards';
+import FeaturesSection from './FeturesSection';
 
 const Home = () => {
     return (
@@ -27,6 +28,9 @@ const Home = () => {
             {/* <section>
                 <Text></Text>
             </section> */}
+            <section>
+                <FeaturesSection />
+            </section>
             <section>
                 <Category></Category>
             </section>

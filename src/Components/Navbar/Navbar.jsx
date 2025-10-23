@@ -43,6 +43,8 @@ const Navbar = () => {
         localStorage.setItem("theme", theme);
     }, [theme]);
 
+    const [open, setOpen] = useState(false);
+
     return (
         <div className='shadow-sm fixed top-0 left-0 w-full z-50 border-b-2 border-primary rounded-b-xl backdrop-blur-2xl'>
             <div className="navbar container mx-auto">
@@ -84,63 +86,67 @@ const Navbar = () => {
                     </div>
 
                     {/* 🔥 Profile Dropdown Section */}
-                    <div className="relative group ml-4">
-                        {/* 🔥 Profile Icon (always visible) */}
-                        <FaUserCircle
-                            size={34}
-                            className="cursor-pointer text-primary"
-                        />
+                    <div className="relative ml-4">
+                        {/* Profile Icon */}
+                        <div
+                            onMouseEnter={() => setOpen(true)}
+                            onMouseLeave={() => setOpen(false)}
+                            className="cursor-pointer"
+                        >
+                            <FaUserCircle size={34} className="text-primary" />
 
-                        {/* 🔥 Dropdown Content */}
-                        <div className="absolute right-0 mt-3 w-44 bg-base-100 shadow-lg rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100 p-3">
-                            {user ? (
-                                <>
-                                    {/* 🔥 Profile Image Show Section */}
-                                    <div className="flex justify-center mb-2">
-                                        {user?.photoURL ? (
-                                            <img
-                                                src={user.photoURL}
-                                                alt="User"
-                                                className="w-12 h-12 rounded-full object-cover border border-primary"
-                                            />
-                                        ) : (
-                                            <FaUserCircle size={48} className="text-primary" />
-                                        )}
-                                    </div>
+                            {/* Dropdown Content */}
+                            {open && (
+                                <div className="absolute right-0 mt-3 w-44 bg-base-100 shadow-lg rounded-xl p-3 z-50">
+                                    {user ? (
+                                        <>
+                                            {/* Profile Image */}
+                                            <div className="flex justify-center mb-2">
+                                                {user?.photoURL ? (
+                                                    <img
+                                                        src={user.photoURL}
+                                                        alt="User"
+                                                        className="w-12 h-12 rounded-full object-cover border border-primary"
+                                                    />
+                                                ) : (
+                                                    <FaUserCircle size={48} className="text-primary" />
+                                                )}
+                                            </div>
 
-                                    <p className="text-center font-medium mb-2">
-                                        {user?.displayName? user?.displayName : user?.email }
-                                        {/* {user.displayName || "User"} */}
-                                    </p>
+                                            <p className="text-center font-medium mb-2">
+                                                {user?.displayName || user?.email || "User"}
+                                            </p>
 
-                                    <Link
-                                        to="/my-profile"
-                                        className="block text-center py-1 rounded-md hover:bg-primary hover:text-white transition"
-                                    >
-                                        View Profile
-                                    </Link>
-                                    <button
-                                        onClick={handleLogOut}
-                                        className="w-full mt-2 bg-primary text-white py-1 rounded-md hover:bg-primary/80 transition"
-                                    >
-                                        Log Out
-                                    </button>
-                                </>
-                            ) : (
-                                <>
-                                    <Link
-                                        to="/login"
-                                        className="block text-center bg-primary text-white py-1 rounded-md hover:bg-primary/80 transition"
-                                    >
-                                        Login
-                                    </Link>
-                                    <Link
-                                        to="/register"
-                                        className="block text-center mt-2 border border-primary text-primary py-1 rounded-md hover:bg-primary hover:text-white transition"
-                                    >
-                                        Register
-                                    </Link>
-                                </>
+                                            <Link
+                                                to="/my-profile"
+                                                className="w-full btn btn-info btn-soft"
+                                            >
+                                                View Profile
+                                            </Link>
+                                            <button
+                                                onClick={handleLogOut}
+                                                className="w-full mt-2 py-2 bg-primary text-white rounded-md hover:bg-primary/80 transition"
+                                            >
+                                                Logout
+                                            </button>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Link
+                                                to="/login"
+                                                className="block text-center bg-primary text-white py-1 rounded-md hover:bg-primary/80 transition"
+                                            >
+                                                Login
+                                            </Link>
+                                            <Link
+                                                to="/register"
+                                                className="block text-center mt-2 border border-primary text-primary py-1 rounded-md hover:bg-primary hover:text-white transition"
+                                            >
+                                                Register
+                                            </Link>
+                                        </>
+                                    )}
+                                </div>
                             )}
                         </div>
                     </div>

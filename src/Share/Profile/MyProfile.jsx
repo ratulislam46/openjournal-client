@@ -14,8 +14,8 @@ const MyProfile = () => {
     if (!user) return <p className="text-center mt-10">No user logged in.</p>;
 
     return (
-        <div className="container mx-auto p-4 mt-24">
-            <div className="max-w-md mx-auto shadow-lg rounded-xl p-6">
+        <div className="container mx-auto p-4 mt-24 ">
+            <div className="max-w-md mx-auto shadow-lg rounded-xl p-6 bg-base-100 border border-gray-200 hover:shadow-xl">
                 {/* Profile Image */}
                 <div className="flex justify-center mb-4">
                     {user?.photoURL ? (
@@ -32,7 +32,7 @@ const MyProfile = () => {
                 {/* User Info */}
                 <div className="space-y-3">
                     {/* Name */}
-                    <p><span className="font-semibold">Name:</span> {user?.displayName || 'N/A'}</p>
+                    <p><span className="font-semibold ">Name:</span> {user?.displayName || 'N/A'}</p>
                     {/* Email */}
                     <p><span className="font-semibold">Email:</span> {user?.email || 'N/A'}</p>
                     {/* Phone */}
