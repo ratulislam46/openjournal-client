@@ -47,7 +47,7 @@ const AllBlogs = () => {
             </div>
             <div className='container mx-auto'>
                 <motion.div 
-                className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'
+                className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-2 md:mx-0'
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}

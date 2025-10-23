@@ -10,6 +10,7 @@ import { FaUserCircle } from "react-icons/fa";
 const Navbar = () => {
 
     const { user, SignOutWithFireBase } = use(AuthContext);
+    const [open, setOpen] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
     console.log(user);
 
@@ -43,7 +44,7 @@ const Navbar = () => {
         localStorage.setItem("theme", theme);
     }, [theme]);
 
-    const [open, setOpen] = useState(false);
+    
 
     return (
         <div className='shadow-sm fixed top-0 left-0 w-full z-50 border-b-2 border-primary rounded-b-xl backdrop-blur-2xl'>
@@ -97,7 +98,7 @@ const Navbar = () => {
 
                             {/* Dropdown Content */}
                             {open && (
-                                <div className="absolute right-0 mt-3 w-44 bg-base-100 shadow-lg rounded-xl p-3 z-50">
+                                <div className="absolute right-0 w-44 bg-base-100 shadow-lg rounded-xl p-3 z-50">
                                     {user ? (
                                         <>
                                             {/* Profile Image */}
