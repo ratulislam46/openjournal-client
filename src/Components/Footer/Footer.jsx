@@ -4,8 +4,8 @@ import logo from '../../../public/logo.png'
 const Footer = () => {
     return (
         <footer className="bg-gray-900 text-white p-10">
-            <div className='container mx-auto grid grid-cols-1 md:grid-cols-4 items-center '>
-                <div>
+            <div className='container mx-auto grid grid-cols-2 md:grid-cols-4 items-center '>
+                <div className='mb-10'>
                     <img src={logo} alt="log" className='w-24' />
                     <p className='w-[70%]'>
                         A space for curious minds,

@@ -79,7 +79,7 @@ const Navbar = () => {
                     {/* Right side toggle button */}
                     <div className="flex-none ml-8 md:ml-4">
                         <button
-                            className="px-2 py-1 rounded-md bg-base-100"
+                            className="px-2 py-1 rounded-md"
                             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
                         >
                             {theme === "light" ? <MdDarkMode size={28} /> : <MdLightMode size={28} />}

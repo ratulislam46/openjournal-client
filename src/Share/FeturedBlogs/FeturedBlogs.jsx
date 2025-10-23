@@ -11,7 +11,6 @@ const FeturedBlogs = () => {
     useEffect(() => {
         axios.get('https://openjournal-server.vercel.app/blogs/sorted')
             .then(res => {
-                // console.log(res.data);
                 setFeturedBlogs(res.data.slice(0, 10))
                 setLoading(false)
             })
@@ -21,34 +20,43 @@ const FeturedBlogs = () => {
             })
     }, []);
 
-    const tableData = [
-        {
-            name: 'Title',
-            selector: row => row.title
-        },
-        {
-            name: 'Category',
-            selector: row => row.category
-        },
-        {
-            name: 'Image',
-            cell: row => <img src={row.image} className='rounded-md w-46 h-20 py-1' alt={row.title} />,
-            ignoreRowClick: true,
-            button: `true`
-        }
-    ];
-
     if (loading) return <Loading></Loading>
 
     return (
-        <div className='pb-16 pt-24'>
-            <div className='container mx-auto'>
-                <DataTable
-                    columns={tableData}
-                    data={feturedBlogs}
-                    highlightOnHover
-                    striped>
-                </DataTable>
+        <div className="pb-16 pt-24 min-h-screen transition-colors duration-500">
+            <div className="container mx-auto p-4 rounded-xl shadow ">
+
+                <div className="overflow-x-auto">
+                    <table className="min-w-full">
+                        <thead className="bg-primary/30">
+                            <tr>
+                                <th className="px-4 py-2 text-left">#</th>
+                                <th className="px-4 py-2 text-left">Title</th>
+                                <th className="px-4 py-2 text-left">Category</th>
+                                <th className="px-4 py-2 text-left">Image</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {feturedBlogs.map((blog, index) => (
+                                <tr
+                                    key={blog._id}
+                                    className="border-b transition-colors"
+                                >
+                                    <td className="px-4 py-2">{index + 1}</td>
+                                    <td className="px-4 py-2">{blog.title}</td>
+                                    <td className="px-4 py-2">{blog.category}</td>
+                                    <td className="px-4 py-2">
+                                        <img
+                                            src={blog.image}
+                                            alt={blog.title}
+                                            className="w-40 h-20 object-cover rounded-md"
+                                        />
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );
