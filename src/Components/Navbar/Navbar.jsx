@@ -85,14 +85,34 @@ const Navbar = () => {
 
                     {/* 🔥 Profile Dropdown Section */}
                     <div className="relative group ml-4">
+                        {/* 🔥 Profile Icon (always visible) */}
                         <FaUserCircle
                             size={34}
                             className="cursor-pointer text-primary"
                         />
-                        <div className="absolute right-0 mt-3 w-40 bg-base-100 shadow-lg rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100 p-3">
-                            {user ?
+
+                        {/* 🔥 Dropdown Content */}
+                        <div className="absolute right-0 mt-3 w-44 bg-base-100 shadow-lg rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100 p-3">
+                            {user ? (
                                 <>
-                                    <p className="text-center font-medium mb-2">👋 {user.displayName || "User"}</p>
+                                    {/* 🔥 Profile Image Show Section */}
+                                    <div className="flex justify-center mb-2">
+                                        {user?.photoURL ? (
+                                            <img
+                                                src={user.photoURL}
+                                                alt="User"
+                                                className="w-12 h-12 rounded-full object-cover border border-primary"
+                                            />
+                                        ) : (
+                                            <FaUserCircle size={48} className="text-primary" />
+                                        )}
+                                    </div>
+
+                                    <p className="text-center font-medium mb-2">
+                                        {user?.displayName? user?.displayName : user?.email }
+                                        {/* {user.displayName || "User"} */}
+                                    </p>
+
                                     <Link
                                         to="/profile"
                                         className="block text-center py-1 rounded-md hover:bg-primary hover:text-white transition"
@@ -106,7 +126,7 @@ const Navbar = () => {
                                         Log Out
                                     </button>
                                 </>
-                                :
+                            ) : (
                                 <>
                                     <Link
                                         to="/login"
@@ -121,7 +141,7 @@ const Navbar = () => {
                                         Register
                                     </Link>
                                 </>
-                            }
+                            )}
                         </div>
                     </div>
                 </div>
