@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import ShowAllBlogs from './ShowAllBlogs';
 import { Typewriter } from 'react-simple-typewriter'
-
+import { motion } from "framer-motion";
 
 const AllBlogs = () => {
 
@@ -17,7 +17,6 @@ const AllBlogs = () => {
             })
     }, [search])
 
-    // console.log(search);
 
     return (
         <div className='pb-16 pt-10'>
@@ -43,11 +42,17 @@ const AllBlogs = () => {
                     placeholder='Search . . .' />
             </div>
             <div className='container mx-auto'>
-                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+                <motion.div 
+                className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8 }}
+                >
                     {
                         blogs?.map(blog => <ShowAllBlogs blog={blog} key={blog._id}></ShowAllBlogs>)
                     }
-                </div>
+                </motion.div>
             </div>
         </div>
     );

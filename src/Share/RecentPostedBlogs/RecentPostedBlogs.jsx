@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ShowRecentBlog from './ShowRecentBlog';
 import { Typewriter } from 'react-simple-typewriter'
 import Loading from '../Loading/Loading';
-
+import { motion } from "framer-motion";
 
 const RecentPostedBlogs = () => {
 
@@ -37,7 +37,12 @@ const RecentPostedBlogs = () => {
                 </span>
             </h1>
             <div className='my-16'>
-                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+                <motion.div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8 }}
+                >
                     {
                         blogs?.map(blog =>
                             <ShowRecentBlog
@@ -46,7 +51,7 @@ const RecentPostedBlogs = () => {
                             >
                             </ShowRecentBlog>)
                     }
-                </div>
+                </motion.div>
             </div>
         </div>
     );

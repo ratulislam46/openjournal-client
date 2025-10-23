@@ -85,7 +85,7 @@ const Navbar = () => {
                         </button>
                     </div>
 
-                    {/* 🔥 Profile Dropdown Section */}
+                    {/* Profile Dropdown Section */}
                     <div className="relative ml-4">
                         {/* Profile Icon */}
                         <div

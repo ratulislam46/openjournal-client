@@ -1,8 +1,8 @@
 import React from 'react';
-import { FaPlane, FaCoffee, FaBriefcase } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaPlane, FaBriefcase } from "react-icons/fa";
 import { MdOutlineHealthAndSafety, MdOutlineStyle } from "react-icons/md";
 import { Typewriter } from 'react-simple-typewriter'
-
 
 const Services = [
     {
@@ -34,32 +34,43 @@ const Services = [
 
 const Cards = () => {
     return (
-        <section className='px-2 lg:px-0'>
-            <h2 className="text-5xl lg:text-6xl font-serif text-center uppercase mb-10">B
-                <span className='text-2xl lg:text-4xl'>
-                <Typewriter
-                    words={["rowse Topics"]}
-                    loop={false}
-                    cursor
-                    cursorStyle="_"
-                    typeSpeed={150}
-                    deleteSpeed={100}
-                    delaySpeed={1000}
-                />
+        <section className="px-2 lg:px-0">
+            <motion.h2
+                className="text-5xl lg:text-6xl font-serif text-center uppercase mb-10"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+            >
+                B
+                <span className="text-2xl lg:text-4xl">
+                    <Typewriter
+                        words={["rowse Topics"]}
+                        loop={false}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={150}
+                        deleteSpeed={100}
+                        delaySpeed={1000}
+                    />
                 </span>
-            </h2>
+            </motion.h2>
+
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                {Services.map(service => (
-                    <div
-                        data-aos="fade-up"
-                        service={service}
+                {Services.map((service, index) => (
+                    <motion.div
                         key={service.id}
+                        service={service}
                         className="bg-base-100 border border-gray-200 shadow-md rounded-2xl p-6 hover:shadow-xl hover:text-primary"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: index * 0.2 }}
                     >
                         {service.icon}
                         <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                         <p>{service.details}</p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>
