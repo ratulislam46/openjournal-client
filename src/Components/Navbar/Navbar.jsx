@@ -5,11 +5,13 @@ import { use, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
 
     const { user, SignOutWithFireBase } = use(AuthContext);
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+    console.log(user);
 
 
     const handleLogOut = () => {
@@ -61,16 +63,6 @@ const Navbar = () => {
                         <img src={logo} alt="logo" className='w-24' />
                     </Link>
 
-                    {/* Right side toggle button */}
-                    <div className="flex-none ml-8 md:ml-4">
-                        <button
-                            className="px-2 py-1 rounded-md bg-base-100"
-                            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                        >
-                            {theme === "light" ? <MdDarkMode size={28} /> : <MdLightMode size={28} />}
-                        </button>
-                    </div>
-
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-base-content">
@@ -81,20 +73,57 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-end">
+                    {/* Right side toggle button */}
+                    <div className="flex-none ml-8 md:ml-4">
+                        <button
+                            className="px-2 py-1 rounded-md bg-base-100"
+                            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                        >
+                            {theme === "light" ? <MdDarkMode size={28} /> : <MdLightMode size={28} />}
+                        </button>
+                    </div>
 
-                    {
-                        user &&
-                        <img className='w-10 mr-2 rounded-2xl' src={user.photoURL || 'https://i.postimg.cc/pX5mX6Zd/istockphoto-1337144146-612x612.jpg'} alt="" />
-                    }
-
-                    {
-                        user ?
-                            <button onClick={handleLogOut} className='btn btn-primary'>Log Out</button> :
-                            <>
-                                <Link to='/register' className='underline text-blue-500 mr-5'>Register</Link>
-                                <Link to='/login' className='btn btn-info'>Sign in</Link>
-                            </>
-                    }
+                    {/* 🔥 Profile Dropdown Section */}
+                    <div className="relative group ml-4">
+                        <FaUserCircle
+                            size={34}
+                            className="cursor-pointer text-primary"
+                        />
+                        <div className="absolute right-0 mt-3 w-40 bg-base-100 shadow-lg rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100 p-3">
+                            {user ?
+                                <>
+                                    <p className="text-center font-medium mb-2">👋 {user.displayName || "User"}</p>
+                                    <Link
+                                        to="/profile"
+                                        className="block text-center py-1 rounded-md hover:bg-primary hover:text-white transition"
+                                    >
+                                        View Profile
+                                    </Link>
+                                    <button
+                                        onClick={handleLogOut}
+                                        className="w-full mt-2 bg-primary text-white py-1 rounded-md hover:bg-primary/80 transition"
+                                    >
+                                        Log Out
+                                    </button>
+                                </>
+                                :
+                                <>
+                                    <Link
+                                        to="/login"
+                                        className="block text-center bg-primary text-white py-1 rounded-md hover:bg-primary/80 transition"
+                                    >
+                                        Login
+                                    </Link>
+                                    <Link
+                                        to="/register"
+                                        className="block text-center mt-2 border border-primary text-primary py-1 rounded-md hover:bg-primary hover:text-white transition"
+                                    >
+                                        Register
+                                    </Link>
+                                </>
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
