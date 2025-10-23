@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
+import Loading from '../Loading/Loading';
 
 const FeturedBlogs = () => {
 
@@ -35,7 +36,9 @@ const FeturedBlogs = () => {
             ignoreRowClick: true,
             button: `true`
         }
-    ]
+    ];
+
+    if (loading) return <Loading></Loading>
 
     return (
         <div className='pb-16 pt-24'>
@@ -43,7 +46,6 @@ const FeturedBlogs = () => {
                 <DataTable
                     columns={tableData}
                     data={feturedBlogs}
-                    progressPending={loading}
                     highlightOnHover
                     striped>
                 </DataTable>

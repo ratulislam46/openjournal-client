@@ -3,20 +3,24 @@ import React, { useEffect, useState } from 'react';
 import ShowAllBlogs from './ShowAllBlogs';
 import { Typewriter } from 'react-simple-typewriter'
 import { motion } from "framer-motion";
+import Loading from '../Loading/Loading';
 
 const AllBlogs = () => {
 
     const [blogs, setBlogs] = useState([])
     const [search, setSearch] = useState("");
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch(`https://openjournal-server.vercel.app/blogs?searchParams=${search}`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data)
+                setLoading(false)
             })
     }, [search])
 
+    if (loading) return <Loading></Loading>
 
     return (
         <div className='pb-16 pt-10'>
