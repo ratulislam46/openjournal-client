@@ -1,5 +1,6 @@
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
 const stats = [
   { title: "Total Entries", count: 1200 },
@@ -10,13 +11,25 @@ const stats = [
 const StatsSection = () => {
   return (
     <section>
-      <div  className='px-2 lg:px-0 pb-16'>
-        <h2 className="text-3xl font-bold text-center mb-12">Our Progress</h2>
+      <div className='px-2 lg:px-0 pb-16'>
+        <h2 className="text-5xl lg:text-6xl font-serif text-center uppercase mb-10">O
+          <span className='text-2xl lg:text-4xl'>
+            <Typewriter
+              words={["ur Progress"]}
+              loop={false}
+              cursor
+              cursorStyle="_"
+              typeSpeed={150}
+              deleteSpeed={100}
+              delaySpeed={1000}
+            />
+          </span>
+        </h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-center">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="bg-base-100 hover:text-primary border border-gray-200 shadow-md rounded-2xl p-6 hover:shadow-xl"
+              className="bg-base-100 hover:text-primary hover:shadow-xl border border-gray-200 shadow-md rounded-2xl p-6"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
