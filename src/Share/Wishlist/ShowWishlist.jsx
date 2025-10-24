@@ -7,8 +7,6 @@ const ShowWishlist = ({ wishlist, wishlists, setWishlists }) => {
     const { email, title, userEmail, image, description, shortdescription, category, id, _id } = wishlist;
 
 
-    // console.log(wishlist);
-
     const handleRemove = (_id) => {
         console.log('remove', _id);
 

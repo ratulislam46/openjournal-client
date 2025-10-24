@@ -9,11 +9,8 @@ import Swal from 'sweetalert2';
 const BlogDetails = () => {
 
     const { user } = use(AuthContext)
-
     const data = useLoaderData();
-
     const { _id, category, description, shortdescription, title, image, email } = data;
-
 
     const handleComment = (e) => {
         e.preventDefault()
@@ -88,7 +85,7 @@ const BlogDetails = () => {
                     {
                         email !== user?.email ?
                             <form onSubmit={handleComment}>
-                                <input type="text" name="comment" className='textarea w-full py-16' placeholder='Comment . . . . . .' /> <br />
+                                <input type="text" name="comment" className='textarea w-full py-16' placeholder='Comment . . . . . .' required /> <br />
                                 <input type="submit" value="Submit" className='btn btn-success mt-5 w-full' />
                             </form> :
                             <div>
