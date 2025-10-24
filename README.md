@@ -1,7 +1,13 @@
 ## MY Website Name : Open Journal
 ## Live Site URL : https://wondrous-paprenjak-d5a5de.netlify.app/
+## Server Site URL : https://github.com/ratulislam46/openjournal-server
 
-A fully responsive blog application built with **React**, styled using **Tailwind CSS** and **DaisyUI**, powered by **MongoDB** and **Firebase** for authentication. This app features **blog posting**, **wishlist**,**user profile**, **routing**, and **user-based interactivity**.
+Open Journal is a modern, fully responsive blogging platform built with React, Tailwind CSS, and DaisyUI. It allows users to read, post, and manage blogs seamlessly. The platform includes user authentication via Firebase, enabling users to sign in with Google, manage their personal wishlists, and track their own blog posts.
+
+Key features like light/dark mode, profile pages, and a dynamic navbar with dropdowns make navigation smooth and user-friendly. The backend, powered by MongoDB, ensures secure storage of blogs and user data.
+
+Purpose & Use:
+This project is ideal for anyone looking to publish content online, follow favorite blogs, or maintain a personal blog portfolio. It demonstrates modern web development techniques and provides a clean, responsive, and interactive user experience, making it perfect for learners, bloggers, or developers exploring full-stack React applications.
 
 ---
 
@@ -29,3 +35,5 @@ A fully responsive blog application built with **React**, styled using **Tailwin
 ## 📸 Adding Images to README
 
 ![Homepage Screenshot](./assets/homepage.png)
+![Profile Screenshot](./assets/profile.png)
+![Blog details Screenshot](./assets/blog%20details.png)
