@@ -53,7 +53,7 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="bg-base-100 border border-gray-200 shadow-md rounded-2xl p-6 hover:text-primary hover:shadow-xl"
+              className="bg-base-100 border border-gray-200 shadow-md rounded-2xl p-6 hover:bg-primary/40"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
