@@ -36,7 +36,7 @@ const ShowRecentBlog = ({ blog }) => {
 
     return (
         <div>
-            <div className="rounded-lg border border-gray-200 shadow-xs bg-base-100 flex flex-col h-full transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+            <div className="rounded-lg border border-primary/10 shadow-xs bg-base-100 flex flex-col h-full transition-all duration-300 hover:shadow-md hover:-translate-y-1">
                 {/* Blog Image */}
                 <div className="aspect-w-16 aspect-h-9 overflow-hidden">
                     <img

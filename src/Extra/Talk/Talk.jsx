@@ -14,27 +14,27 @@ const Talk = () => {
                     </div>
 
                     <div data-aos="zoom-in-up" className='mt-12 lg:mt-0'>
-                        <div className="collapse collapse-plus bg-base-100 border border-base-300">
+                        <div className="collapse collapse-plus bg-base-100 border border-primary/10">
                             <input type="radio" name="my-accordion-3" defaultChecked />
                             <div className="collapse-title font-semibold">Why is traveling important?</div>
                             <div className="collapse-content text-sm text-base-content">It helps people explore new cultures, relax, and gain new experiences.</div>
                         </div>
-                        <div className="collapse collapse-plus bg-base-100 border border-base-300 mt-3">
+                        <div className="collapse collapse-plus bg-base-100 border border-primary/10 mt-3">
                             <input type="radio" name="my-accordion-3" />
                             <div className="collapse-title font-semibold">What is the use of functions?</div>
                             <div className="collapse-content text-sm text-base-content"> Functions help to reuse code and make the program organized and efficient.</div>
                         </div>
-                        <div className="collapse collapse-plus bg-base-100 border border-base-300 mt-3">
+                        <div className="collapse collapse-plus bg-base-100 border border-primary/10 mt-3">
                             <input type="radio" name="my-accordion-3" />
                             <div className="collapse-title font-semibold">Why is regular exercise important?</div>
                             <div className="collapse-content text-sm text-base-content">It improves heart health, boosts mood, and keeps the body fit.</div>
                         </div>
-                        <div className="collapse collapse-plus bg-base-100 border border-base-300 mt-3">
+                        <div className="collapse collapse-plus bg-base-100 border border-primary/10 mt-3">
                             <input type="radio" name="my-accordion-3" />
                             <div className="collapse-title font-semibold">Why are soft skills important in a job?</div>
                             <div className="collapse-content text-sm text-base-content">Soft skills like communication and teamwork help you work better with others.</div>
                         </div>
-                        <div className="collapse collapse-plus bg-base-100 border border-base-300 mt-3">
+                        <div className="collapse collapse-plus bg-base-100 border border-primary/10 mt-3">
                             <input type="radio" name="my-accordion-3" />
                             <div className="collapse-title font-semibold">What is a variable in programming?</div>
                             <div className="collapse-content text-sm text-base-content">A variable is a container that stores data values.</div>

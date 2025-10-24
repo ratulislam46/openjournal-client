@@ -49,7 +49,7 @@ const ShowWishlist = ({ wishlist, wishlists, setWishlists }) => {
     return (
         <div>
             <div className='container mx-auto'>
-                <ul className="list bg-base-100 rounded-box shadow-md border border-gray-200">
+                <ul className="list bg-base-100 rounded-box shadow-md border border-primary/10">
                     <li className="list-row">
                         <div><img className="size-10 rounded-box" src={image} /></div>
                         <div>

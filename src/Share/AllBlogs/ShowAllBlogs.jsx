@@ -34,7 +34,7 @@ const ShowAllBlogs = ({ blog }) => {
 
     return (
         <div>
-            <div className="rounded-lg  border border-gray-200 shadow-lg flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div className="rounded-lg  border border-primary/10 shadow-lg flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 {/* Blog Image */}
                 <div className="aspect-w-16 aspect-h-9 overflow-hidden">
                     <img

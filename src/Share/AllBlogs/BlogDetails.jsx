@@ -53,7 +53,7 @@ const BlogDetails = () => {
     return (
         <div>
             <div className='container mx-auto mt-28 mb-16 '>
-                <div className='bg-base-100 border border-gray-200'>
+                <div className='bg-base-100 border border-primary/10'>
                     <div className="lg:flex shadow-sm">
                         <div className='lg:w-[50%]'>
                             <img

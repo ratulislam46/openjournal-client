@@ -61,7 +61,7 @@ const Cards = () => {
                     <motion.div
                         key={service.id}
                         service={service}
-                        className="bg-base-100 border border-gray-200 shadow-md rounded-2xl hover:bg-primary/40 p-6 hover:shadow-xl "
+                        className="bg-base-100 border border-primary/10 shadow-md rounded-2xl hover:bg-primary/40 p-6 hover:shadow-xl "
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}

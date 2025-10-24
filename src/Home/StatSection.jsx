@@ -29,7 +29,7 @@ const StatsSection = () => {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="bg-base-100 hover:bg-primary/40 border border-gray-200 shadow-md rounded-2xl p-6"
+              className="bg-base-100 hover:bg-primary/40 border border-primary/10 shadow-md rounded-2xl p-6"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}

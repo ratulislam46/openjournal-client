@@ -44,7 +44,7 @@ const Navbar = () => {
         localStorage.setItem("theme", theme);
     }, [theme]);
 
-    
+
 
     return (
         <div className='shadow-sm fixed top-0 left-0 w-full z-50 border-b-2 border-primary rounded-b-xl backdrop-blur-2xl'>
@@ -75,77 +75,110 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                <div className="navbar-end">
-                    {/* Right side toggle button */}
-                    <div className="flex-none ml-8 md:ml-4">
+                {/* Right Side Actions */}
+                <div className="navbar-end flex items-center gap-2 md:gap-3">
+                    {/* Theme Toggle Button */}
+                    <div className="flex-none">
                         <button
-                            className="px-2 py-1 rounded-md"
+                            className="btn btn-ghost btn-circle hover:bg-primary/10 transition-all duration-300"
                             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                            aria-label="Toggle theme"
                         >
-                            {theme === "light" ? <MdDarkMode size={28} /> : <MdLightMode size={28} />}
+                            {theme === "light" ?
+                                <MdDarkMode size={24} className="text-primary" /> :
+                                <MdLightMode size={24} className="text-warning" />
+                            }
                         </button>
                     </div>
 
                     {/* Profile Dropdown Section */}
-                    <div className="relative ml-4">
-                        {/* Profile Icon */}
+                    <div className="relative">
                         <div
                             onMouseEnter={() => setOpen(true)}
                             onMouseLeave={() => setOpen(false)}
                             className="cursor-pointer"
                         >
-                            <FaUserCircle size={34} className="text-primary" />
+                            {/* Profile Icon/Avatar */}
+                            <div className="avatar online placeholder hover:scale-105 transition-transform duration-200">
+                                {user?.photoURL ? (
+                                    <div className="w-10 h-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                        <img src={user.photoURL} alt="User Avatar" className="object-cover" />
+                                    </div>
+                                ) : (
+                                    <FaUserCircle size={40} className="text-primary hover:text-primary/80 transition-colors" />
+                                )}
+                            </div>
 
-                            {/* Dropdown Content */}
+                            {/* Enhanced Dropdown Content */}
                             {open && (
-                                <div className="absolute right-0 w-44 bg-base-100 shadow-lg rounded-xl p-3 z-50">
+                                <div className="absolute right-0 w-64 bg-base-100 shadow-2xl rounded-2xl p-4 border border-primary/10 z-[100] animate-fade-in">
                                     {user ? (
                                         <>
-                                            {/* Profile Image */}
-                                            <div className="flex justify-center mb-2">
-                                                {user?.photoURL ? (
-                                                    <img
-                                                        src={user.photoURL}
-                                                        alt="User"
-                                                        className="w-12 h-12 rounded-full object-cover border border-primary"
-                                                    />
-                                                ) : (
-                                                    <FaUserCircle size={48} className="text-primary" />
-                                                )}
+                                            {/* Profile Header */}
+                                            <div className="flex flex-col items-center mb-4">
+                                                <div className="avatar mb-3">
+                                                    {user?.photoURL ? (
+                                                        <div className="w-16 h-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                                            <img
+                                                                src={user.photoURL}
+                                                                alt="User Profile"
+                                                                className="object-cover"
+                                                            />
+                                                        </div>
+                                                    ) : (
+                                                        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                                                            <FaUserCircle size={64} className="text-primary" />
+                                                        </div>
+                                                    )}
+                                                </div>
+
+                                                <h3 className="font-semibold text-lg text-center line-clamp-1">
+                                                    {user?.displayName || "User"}
+                                                </h3>
+                                                <p className="text-sm text-base-content/60 text-center line-clamp-1">
+                                                    {user?.email}
+                                                </p>
                                             </div>
 
-                                            <p className="text-center text-2xl font-medium mb-2">
-                                                {user?.displayName || user?.email || "User"}
-                                            </p>
-                                            <div className='border mb-4'></div>
+                                            <div className='divider my-2'></div>
 
-                                            <Link
-                                                to="/my-profile"
-                                                className="w-full btn btn-info btn-soft"
-                                            >
-                                                View Profile
-                                            </Link>
-                                            <button
-                                                onClick={handleLogOut}
-                                                className="w-full mt-2 py-2 bg-primary text-white rounded-md hover:bg-primary/80 transition"
-                                            >
-                                                Logout
-                                            </button>
+                                            {/* Action Buttons */}
+                                            <div className="space-y-2">
+                                                <Link
+                                                    to="/my-profile"
+                                                    className="btn btn-outline btn-primary w-full normal-case"
+                                                >
+                                                    <FaUserCircle className="mr-2" />
+                                                    View Profile
+                                                </Link>
+                                                <button
+                                                    onClick={handleLogOut}
+                                                    className="btn btn-primary w-full normal-case hover:btn-error transition-colors"
+                                                >
+                                                    Logout
+                                                </button>
+                                            </div>
                                         </>
                                     ) : (
                                         <>
-                                            <Link
-                                                to="/login"
-                                                className="block text-center bg-primary text-white py-1 rounded-md hover:bg-primary/80 transition"
-                                            >
-                                                Login
-                                            </Link>
-                                            <Link
-                                                to="/register"
-                                                className="block text-center mt-2 border border-primary text-primary py-1 rounded-md hover:bg-primary hover:text-white transition"
-                                            >
-                                                Register
-                                            </Link>
+                                            <div className="text-center mb-4">
+                                                <FaUserCircle size={48} className="text-primary mx-auto mb-2" />
+                                                <p className="text-sm text-base-content/60">Sign in to continue</p>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <Link
+                                                    to="/login"
+                                                    className="btn btn-primary w-full normal-case"
+                                                >
+                                                    Login
+                                                </Link>
+                                                <Link
+                                                    to="/register"
+                                                    className="btn btn-outline btn-primary w-full normal-case"
+                                                >
+                                                    Register
+                                                </Link>
+                                            </div>
                                         </>
                                     )}
                                 </div>

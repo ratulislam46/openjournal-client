@@ -88,7 +88,7 @@ const CustomerSay = () => {
 
         return (
             <div
-                className={`card bg-base-100 border border-gray-200 shadow-md w-72 transition-all duration-300 ${cardStyle} ${responsiveClass}`}
+                className={`card bg-base-100 border border-primary/10 shadow-md w-72 transition-all duration-300 ${cardStyle} ${responsiveClass}`}
             >
                 <div className="p-8">
                     <div className='pb-4'>
