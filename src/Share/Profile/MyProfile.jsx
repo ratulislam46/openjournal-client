@@ -29,9 +29,6 @@ const MyProfile = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="bg-gradient-to-br from-primary/5 via-base-100 to-secondary/5 rounded-3xl shadow-2xl border border-primary/10 overflow-hidden mb-8"
                 >
-                    {/* Decorative Top Bar */}
-                    <div className="h-2 bg-gradient-to-r from-primary via-secondary to-accent"></div>
-                    
                     <div className="p-8">
                         {/* Profile Header */}
                         <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">

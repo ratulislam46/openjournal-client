@@ -7,7 +7,6 @@ import Agency from '../Extra/Agency/Agency';
 import CustomerSay from './CustomerSay';
 import Category from './Category';
 import Cards from './Cards';
-import FeaturesSection from './FeturesSection';
 import StatsSection from './StatSection';
 
 const Home = () => {
@@ -24,9 +23,6 @@ const Home = () => {
             </section>
             <section className='hidden lg:block'>
                 <Agency></Agency>
-            </section>
-            <section>
-                <FeaturesSection />
             </section>
             <section>
                 <Category></Category>
