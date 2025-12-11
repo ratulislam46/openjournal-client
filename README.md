@@ -11,7 +11,7 @@ This project is ideal for anyone looking to publish content online, follow favor
 
 ---
 
-## 🔥 Features
+## Features
 
 - **Responsive Design** – Mobile-first UI using Tailwind CSS and DaisyUI.  
 - **All Blogs Page** – View all published blogs from database.  
@@ -32,7 +32,7 @@ This project is ideal for anyone looking to publish content online, follow favor
 - Deployment: Firebase Hosting  ;
 
 
-## 📸 Adding Images to README
+## Projects Images 
 
 #### 🔹 Home Page
 ![Homepage Screenshot](./assets/homepage.png)
