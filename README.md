@@ -34,6 +34,18 @@ This project is ideal for anyone looking to publish content online, follow favor
 
 ## 📸 Adding Images to README
 
+#### 🔹 Home Page
 ![Homepage Screenshot](./assets/homepage.png)
-![Profile Screenshot](./assets/profile.png)
+
+#### 🔹 Blog page
+![Blog Screenshot](./assets/blogPage.png)
+
+#### 🔹 Blog details page
 ![Blog details Screenshot](./assets/blog%20details.png)
+
+#### 🔹 Register page
+![Register Screenshot](./assets/register.png)
+
+### User email & pass
+email: siam@ahmed.com
+pass: 111111
