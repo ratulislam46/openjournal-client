@@ -1,11 +1,12 @@
-import React, { use } from 'react';
-import loginLottie from '../../assets/lottie/Login.json'
-import Lottie from 'lottie-react';
+import React, { Suspense, use } from 'react';
+import loginLottie from '../../assets/lottie/Login.json';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Auth/AuthProvider';
 import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
 import Navbar from '../../Components/Navbar/Navbar';
+import Loading from '../Loading/Loading';
+const Lottie = React.lazy(() => import("lottie-react"));
 
 const Login = () => {
 
@@ -59,7 +60,9 @@ const Login = () => {
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className='text-center lg:text-left'>
-                        <Lottie style={{ width: '400px' }} animationData={loginLottie} loop={true}></Lottie>
+                        <Suspense fallback={<Loading></Loading>}>
+                            <Lottie style={{ width: '400px' }} animationData={loginLottie} loop={true}></Lottie>
+                        </Suspense>
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div className="card-body">

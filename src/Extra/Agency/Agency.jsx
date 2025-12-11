@@ -1,7 +1,6 @@
 import React from 'react';
 import Travel from '../../assets/image/view.jpg';
 import { GoArrowRight } from "react-icons/go";
-import { FaArrowRight } from "react-icons/fa";
 
 const Agency = () => {
     return (
@@ -10,7 +9,7 @@ const Agency = () => {
                 <div className='lg:flex items-center gap-1'>
 
                     <div data-aos="fade-right" className=' lg:w-[40%]'>
-                        <img src={Travel} alt="" className='w-96 h-[500px] rounded-3xl' />
+                        <img src={Travel} alt="Travel Image" loading='lazy' className='w-96 h-[500px] rounded-3xl' />
                     </div>
 
                     <div data-aos="fade-left" className=' lg:w-[60%] space-y-6 mt-18 lg:mt-0'>

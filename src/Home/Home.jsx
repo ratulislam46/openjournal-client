@@ -1,25 +1,33 @@
-import React from 'react';
-import Banner from './Banner';
+import React, { Suspense } from 'react';
 import NewLetter from './NewLetter';
-import RecentPostedBlogs from '../Share/RecentPostedBlogs/RecentPostedBlogs';
 import Talk from '../Extra/Talk/Talk';
 import Agency from '../Extra/Agency/Agency';
-import CustomerSay from './CustomerSay';
 import Category from './Category';
 import Cards from './Cards';
 import StatsSection from './StatSection';
+import Loading from '../Share/Loading/Loading.jsx';
+
+// dynamic import for lazy loading 
+const Banner = React.lazy(() => import('./Banner.jsx'));
+const RecentPostedBlogs = React.lazy(() => import('../Share/RecentPostedBlogs/RecentPostedBlogs'));
+const CustomerSay = React.lazy(() => import("./CustomerSay"));
+
 
 const Home = () => {
     return (
         <div className='container mx-auto'>
             <section className='pt-20'>
-                <Banner></Banner>
+                <Suspense fallback={<Loading />}>
+                    <Banner />
+                </Suspense>
             </section>
             <section>
                 <Cards></Cards>
             </section>
             <section>
-                <RecentPostedBlogs></RecentPostedBlogs>
+                <Suspense fallback={<Loading />}>
+                    <RecentPostedBlogs />
+                </Suspense>
             </section>
             <section className='hidden lg:block'>
                 <Agency></Agency>
@@ -31,10 +39,12 @@ const Home = () => {
                 <Talk></Talk>
             </section>
             <section>
-                <CustomerSay></CustomerSay>
+                <Suspense fallback={<Loading />}>
+                    <CustomerSay />
+                </Suspense>
             </section>
             <section>
-                <StatsSection/>
+                <StatsSection />
             </section>
             <section>
                 <NewLetter></NewLetter>
