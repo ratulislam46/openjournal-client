@@ -47,7 +47,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='shadow-sm fixed top-0 left-0 w-full z-50 border-b-2 border-primary rounded-b-xl backdrop-blur-2xl'>
+        <div className='shadow-sm fixed top-0 left-0 w-full z-50 bg-white'>
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -56,7 +56,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-black">
                             {
                                 links
                             }
@@ -68,7 +68,7 @@ const Navbar = () => {
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 text-base-content">
+                    <ul className="menu menu-horizontal px-1 text-black">
                         {
                             links
                         }
