@@ -27,7 +27,7 @@ const ShowRecentBlog = ({ blog }) => {
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
             }}
             whileHover={{ y: -8 }}
-            className="group bg-white  overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
+            className="group bg-white  overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full"
         >
             {/* Image Section */}
             <div className="relative h-52 overflow-hidden">
@@ -46,7 +46,7 @@ const ShowRecentBlog = ({ blog }) => {
 
             {/* Content Section */}
             <div className="p-6 flex flex-col flex-grow">
-                <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300">
+                <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 transition-colors duration-300">
                     {title}
                 </h2>
                 <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-6">
