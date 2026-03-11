@@ -44,9 +44,9 @@ const Home = () => {
                         <CustomerSay />
                     </Suspense>
                 </section>
-                <section>
+                {/* <section>
                     <StatsSection />
-                </section>
+                </section> */}
                 <section>
                     <NewLetter></NewLetter>
                 </section>

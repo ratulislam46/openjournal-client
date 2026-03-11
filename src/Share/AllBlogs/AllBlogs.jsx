@@ -24,19 +24,21 @@ const AllBlogs = () => {
 
     return (
         <div className='pb-16 pt-10'>
-            <h1 className='text-5xl lg:text-6xl text-center mt-16 mb-8 uppercase font-serif'>A
-                <span className='text-2xl lg:text-4xl'>
-                    <Typewriter
-                        words={["ll blogs"]}
-                        loop={false}
-                        cursor
-                        cursorStyle="_"
-                        typeSpeed={150}
-                        deleteSpeed={100}
-                        delaySpeed={1000}
-                    />
-                </span>
-            </h1>
+            {/* --- Updated Header Section Start --- */}
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className='text-center mt-16 md:mt-20 lg:mt-24 mb-12 px-4'
+            >
+                <p className='font-bold tracking-[0.3em] uppercase text-xl mb-4'>
+                    Explore our repository
+                </p>
+
+                <p className='max-w-2xl mx-auto text-gray-500 text-lg lg:text-xl italic'>
+                    "Knowledge is power. Dive into a world of shared insights, research, and stories from our global community of thinkers."
+                </p>
+            </motion.div>
 
             {/* search input  */}
             <div className='my-8 text-center'>
@@ -46,8 +48,8 @@ const AllBlogs = () => {
                     placeholder='Search . . .' />
             </div>
             <div className='container mx-auto'>
-                <motion.div 
-                className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-2 md:mx-0'
+                <motion.div
+                    className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-2 md:mx-0'
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}

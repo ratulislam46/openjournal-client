@@ -78,7 +78,7 @@ const Navbar = () => {
                 {/* Right Side Actions */}
                 <div className="navbar-end flex items-center gap-2 md:gap-3">
                     {/* Theme Toggle Button */}
-                    <div className="flex-none">
+                    {/* <div className="flex-none">
                         <button
                             className="btn btn-ghost btn-circle hover:bg-primary/10 transition-all duration-300"
                             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
@@ -89,7 +89,7 @@ const Navbar = () => {
                                 <MdLightMode size={24} className="text-warning" />
                             }
                         </button>
-                    </div>
+                    </div> */}
 
                     {/* Profile Dropdown Section */}
                     <div className="relative">
