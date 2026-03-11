@@ -1,48 +1,108 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { motion } from "framer-motion";
 
 const Talk = () => {
-    return (
-        <div>
-            <div className='px-2 lg:px-0'>
-                <div className='lg:flex justify-between items-center my-24'>
-                    <div data-aos="zoom-in-up" className=' space-y-5'>
-                        <h3 className='text-xl text-amber-500 font-semibold'>Talk to support</h3>
-                        <h1 className='text-2xl md:text-3xl lg:text-5xl font-semibold -mt-4 '>Frequently asked questiions</h1>
-                        <p className='text-base-content'>Find answers to your questions instantly. Need more guidance? Dive into our extensive documentation for all your queries.</p>
-                        <Link to='/'><button className='btn bg-amber-400 px-6 md:px-8 lg:px-10 p rounded'>Contact Our Team</button></Link>
-                    </div>
+    // কন্টেইনারের জন্য এনিমেশন ভেরিয়েন্ট
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
+    };
 
-                    <div data-aos="zoom-in-up" className='mt-12 lg:mt-0'>
-                        <div className="collapse collapse-plus bg-base-100 border border-primary/10">
-                            <input type="radio" name="my-accordion-3" defaultChecked />
-                            <div className="collapse-title font-semibold">Why is traveling important?</div>
-                            <div className="collapse-content text-sm text-base-content">It helps people explore new cultures, relax, and gain new experiences.</div>
-                        </div>
-                        <div className="collapse collapse-plus bg-base-100 border border-primary/10 mt-3">
-                            <input type="radio" name="my-accordion-3" />
-                            <div className="collapse-title font-semibold">What is the use of functions?</div>
-                            <div className="collapse-content text-sm text-base-content"> Functions help to reuse code and make the program organized and efficient.</div>
-                        </div>
-                        <div className="collapse collapse-plus bg-base-100 border border-primary/10 mt-3">
-                            <input type="radio" name="my-accordion-3" />
-                            <div className="collapse-title font-semibold">Why is regular exercise important?</div>
-                            <div className="collapse-content text-sm text-base-content">It improves heart health, boosts mood, and keeps the body fit.</div>
-                        </div>
-                        <div className="collapse collapse-plus bg-base-100 border border-primary/10 mt-3">
-                            <input type="radio" name="my-accordion-3" />
-                            <div className="collapse-title font-semibold">Why are soft skills important in a job?</div>
-                            <div className="collapse-content text-sm text-base-content">Soft skills like communication and teamwork help you work better with others.</div>
-                        </div>
-                        <div className="collapse collapse-plus bg-base-100 border border-primary/10 mt-3">
-                            <input type="radio" name="my-accordion-3" />
-                            <div className="collapse-title font-semibold">What is a variable in programming?</div>
-                            <div className="collapse-content text-sm text-base-content">A variable is a container that stores data values.</div>
-                        </div>
-                    </div>
+    // প্রতিটি চাইল্ড এলিমেন্টের জন্য এনিমেশন
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { 
+            opacity: 1, 
+            y: 0, 
+            transition: { duration: 0.5, ease: "easeOut" } 
+        }
+    };
+
+    return (
+        <section className="px-4 lg:px-2 overflow-hidden">
+            <motion.div 
+                className="flex flex-col lg:flex-row justify-between items-start my-16 lg:my-24 gap-12"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+            >
+                {/* Left Side: Content */}
+                <div className="w-full lg:w-1/2 space-y-6">
+                    <motion.h3 
+                        variants={itemVariants}
+                        className="text-xl text-amber-500 font-bold uppercase tracking-wide"
+                    >
+                        Talk to support
+                    </motion.h3>
+                    
+                    <motion.h1 
+                        variants={itemVariants}
+                        className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-800 leading-tight"
+                    >
+                        Frequently asked <br /> questions
+                    </motion.h1>
+                    
+                    <motion.p 
+                        variants={itemVariants}
+                        className="text-gray-500 text-lg max-w-lg leading-relaxed"
+                    >
+                        Find answers to your questions instantly. Need more guidance? 
+                        Dive into our extensive documentation for all your queries.
+                    </motion.p>
+                    
+                    <motion.div variants={itemVariants} className="pt-2">
+                        <Link to='/'>
+                            <motion.button 
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="bg-primary/80 hover:bg-primary text-gray-900 font-bold py-4 px-10 rounded-2xl shadow-lg transition-colors"
+                            >
+                                Contact Our Team
+                            </motion.button>
+                        </Link>
+                    </motion.div>
                 </div>
-            </div>
-        </div>
+
+                {/* Right Side: Accordion */}
+                <motion.div 
+                    className="w-full lg:w-1/2"
+                    variants={itemVariants}
+                >
+                    <div className="space-y-4">
+                        {[
+                            { q: "Why is traveling important?", a: "It helps people explore new cultures, relax, and gain new experiences." },
+                            { q: "What is the use of functions?", a: "Functions help to reuse code and make the program organized and efficient." },
+                            { q: "Why is regular exercise important?", a: "It improves heart health, boosts mood, and keeps the body fit." },
+                            { q: "Why are soft skills important in a job?", a: "Soft skills like communication and teamwork help you work better with others." },
+                            { q: "What is a variable in programming?", a: "A variable is a container that stores data values." }
+                        ].map((faq, index) => (
+                            <motion.div 
+                                key={index}
+                                variants={itemVariants}
+                                whileHover={{ x: 10 }}
+                                className="collapse collapse-plus bg-white border border-gray-100 shadow-sm rounded-2xl"
+                            >
+                                <input type="radio" name="my-accordion-3" defaultChecked={index === 0} />
+                                <div className="collapse-title text-lg font-bold text-gray-700">
+                                    {faq.q}
+                                </div>
+                                <div className="collapse-content text-gray-500">
+                                    <p>{faq.a}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
+            </motion.div>
+        </section>
     );
 };
 
