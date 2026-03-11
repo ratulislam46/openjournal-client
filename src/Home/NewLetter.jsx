@@ -55,7 +55,7 @@ const NewLetter = () => {
                     <input
                         type="submit"
                         value="Submit"
-                        className="pb-3 pt-3 px-6 bg-primary border rounded-md border-none cursor-pointer hover:bg-primary/90 transition"
+                        className="pb-3 pt-3 px-6 bg-primary border rounded-md border-none text-white font-semibold cursor-pointer hover:bg-primary/90 transition"
                     />
                 </motion.form>
             </div>

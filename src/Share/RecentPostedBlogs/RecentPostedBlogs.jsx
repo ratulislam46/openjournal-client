@@ -37,7 +37,7 @@ const RecentPostedBlogs = () => {
                         />
                     </span>
                 </h1>
-                <div className="h-1.5 w-24 bg-primary mx-auto mt-4 rounded-full opacity-30"></div>
+               
             </div>
 
             {/* Grid Container */}
