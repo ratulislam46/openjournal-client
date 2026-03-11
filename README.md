@@ -4,8 +4,6 @@
 
 Open Journal is a modern, fully responsive blogging platform built with React, Tailwind CSS, and DaisyUI. It allows users to read, post, and manage blogs seamlessly. The platform includes user authentication via Firebase, enabling users to sign in with Google, manage their personal wishlists, and track their own blog posts.
 
-Key features like light/dark mode, profile pages, and a dynamic navbar with dropdowns make navigation smooth and user-friendly. The backend, powered by MongoDB, ensures secure storage of blogs and user data.
-
 Purpose & Use:
 This project is ideal for anyone looking to publish content online, follow favorite blogs, or maintain a personal blog portfolio. It demonstrates modern web development techniques and provides a clean, responsive, and interactive user experience, making it perfect for learners, bloggers, or developers exploring full-stack React applications.
 
@@ -37,15 +35,9 @@ This project is ideal for anyone looking to publish content online, follow favor
 #### 🔹 Home Page
 ![Homepage Screenshot](./assets/homepage.png)
 
-#### 🔹 Blog page
-![Blog Screenshot](./assets/blogPage.png)
-
-#### 🔹 Blog details page
-![Blog details Screenshot](./assets/blog%20details.png)
-
 #### 🔹 Register page
 ![Register Screenshot](./assets/register.png)
 
-### User email & pass
-email: siam@ahmed.com
-pass: 111111
+### Testing Email & Pass
+Email: siam@ahmed.com
+Pass: 111111
