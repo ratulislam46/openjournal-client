@@ -1,74 +1,41 @@
-import { useState, useEffect } from "react";
+import { FaBookOpen } from "react-icons/fa";
+import banner from "../assets/image/banner.jpg"
+import { Link } from "react-router";
 
 const Banner = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
+  return (
+    <div
+      className="relative h-[90vh] w-full bg-cover bg-center"
+      style={{ backgroundImage: `url(${banner})` }}
+    >
+      {/* overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
-    const images = [
-        {
-            src: "https://i.postimg.cc/9XyJFdzM/Blue-Nature-Camping-Blog-Banner.png",
-            alt: "Image 1",
-        },
-        {
-            src: "https://i.postimg.cc/kXWJsXwG/White-and-Green-Simple-World-Environment-Day-2025-Banner-Horizontal.png",
-            alt: "Image 2",
-        },
-        {
-            src: "https://i.postimg.cc/bvKRHT3K/Green-and-Yellow-Simple-Explore-The-World-Youtube-Thumbnail.png",
-            alt: "Image 4",
-        },
-    ];
+      {/* content */}
+      <div className="relative z-10 flex h-full items-center justify-center text-center px-4">
+        <div className="max-w-3xl text-white">
 
-    const nextSlide = () => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-    };
+          <div className="flex justify-center mb-4 text-4xl">
+            <FaBookOpen />
+          </div>
 
-    const prevSlide = () => {
-        setCurrentSlide(
-            (prevSlide) => (prevSlide - 1 + images.length) % images.length
-        );
-    };
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Open Journal Platform
+          </h1>
 
-    // Auto slide every 3 seconds
-    useEffect(() => {
-        const interval = setInterval(nextSlide, 5000);
-        return () => clearInterval(interval);
-    }, []);
+          <p className="text-lg md:text-xl mb-6 text-gray-200">
+            Discover research, publish your ideas, and explore a world of
+            academic knowledge through our modern open journal platform.
+          </p>
 
-    return (
-        <div className="carousel w-full relative rounded-2xl mb-12 lg:mb-24 overflow-hidden">
-            {/* Carousel Items */}
-            <div
-                className="flex transition-transform duration-1000 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-                {images.map((image, index) => (
-                    <div key={index} className="w-full flex-shrink-0">
-                        <img
-                            src={image.src}
-                            className="w-full h-[300px] md:h-[400px] lg:h-[450px] xl:h-[480px] rounded-2xl border-2 border-transparent"
-                            alt={image.alt}
-                        />
-                    </div>
-                ))}
-            </div>
+          <Link to='allBlogs' className="px-6 py-3 bg-primary/90 hover:bg-primary transition rounded-lg text-white font-semibold">
+            Explore Blogs
+          </Link>
 
-            {/* Carousel Controls */}
-            <div className="absolute flex justify-between lg:justify-between bottom-0 lg:bottom-auto transform lg:-translate-y-1/2 left-0 right-0 lg:left-5 lg:right-5 lg:top-1/2 z-10">
-                <button
-                    onClick={prevSlide}
-                    className="btn bg-transparent border-[3px] flex items-center text-xl text-white font-bold rounded-none lg:btn-circle"
-                >
-                    ❮
-                </button>
-                <button
-                    onClick={nextSlide}
-                    className="btn bg-transparent border-[3px] flex items-center text-xl text-white font-bold rounded-none lg:btn-circle"
-                >
-                    ❯
-                </button>
-            </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Banner;
