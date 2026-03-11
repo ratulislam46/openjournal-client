@@ -22,10 +22,10 @@ const Banner = () => {
 
   return (
     <div
-      className="relative h-screen min-h-[600px] w-full bg-cover bg-center overflow-hidden"
+      className="relative h-screen min-h-[600px] mt-20 w-full bg-cover bg-center overflow-hidden"
       style={{ backgroundImage: `url(${banner})` }}
     >
-      {/* overlay - গ্রাডিয়েন্ট ব্যবহার করা হয়েছে আরও গভীরতার জন্য */}
+      {/* overlay  */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
 
       {/* content */}

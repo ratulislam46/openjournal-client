@@ -1,7 +1,7 @@
 .active {
+    color: white !important;
     background-color: rgb(32, 97, 238);
-    margin-left: 2px;
-    margin-right: 2px;
+    box-shadow: 0 4px 15px rgba(32, 97, 238, 0.3); 
 }
 
 .particles-container {
