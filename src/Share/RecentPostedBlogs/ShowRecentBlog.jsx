@@ -3,83 +3,75 @@ import React, { use } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../../Auth/AuthProvider';
 import toast from 'react-hot-toast';
-import Loading from '../Loading/Loading';
+import { motion } from "framer-motion";
+import { FaHeart, FaArrowRight } from "react-icons/fa";
 
 const ShowRecentBlog = ({ blog }) => {
-
-    const { user } = use(AuthContext)
-
-    const { _id, category, shortdescription, title, image, email } = blog;
+    const { user } = use(AuthContext);
+    const { _id, category, shortdescription, title, image } = blog;
 
     const handleWishList = (id) => {
-
-        // console.log('added wishlisht', id);
-        // console.log(blog);
         axios.post('https://openjournal-server.vercel.app/wishlist', {
             userEmail: user?.email,
-            category: blog.category,
-            shortdescription: blog.shortdescription,
-            description: blog.description,
-            id: blog._id,
-            image: blog.image,
-            title: blog.title,
-            email: blog.email
+            ...blog,
+            id: blog._id // mapping server requirements
         })
-            .then(res => {
-                toast.success('Add wishlist successfully')
-            })
-            .catch(error => {
-                // console.log(error);
-                toast.error('Error wihlisht')
-            })
-    }
+        .then(() => toast.success('Added to wishlist!'))
+        .catch(() => toast.error('Failed to add wishlist'));
+    };
 
     return (
-        <div>
-            <div className="rounded-lg border border-primary/10 shadow-xs bg-base-100 flex flex-col h-full transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                {/* Blog Image */}
-                <div className="aspect-w-16 aspect-h-9 overflow-hidden">
-                    <img
-                        src={image}
-                        alt={title}
-                        className="object-cover w-full h-full rounded-t-lg transition-transform duration-500 hover:scale-105"
-                        loading="lazy"
-                    />
-                </div>
-
-                {/* Blog Content */}
-                <div className="flex flex-col justify-between p-6 space-y-6 flex-grow">
-                    <div className="space-y-3">
-                        {/* Title and Description */}
-                        <h2 className="text-xl md:text-2xl text-base-content font-semibold line-clamp-2" title={title}>
-                            {title}
-                        </h2>
-                        <p className="text-base-content line-clamp-3" title={shortdescription}>
-                            {shortdescription}
-                        </p>
-                    </div>
-
-                    {/* Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                        <Link
-                            to={`/blog_details/${_id}`}
-                            className="btn btn-outline btn-info flex-1 text-center py-2 px-4 transition-colors"
-                            aria-label={`View details of ${title}`}
-                        >
-                            Details
-                        </Link>
-
-                        <button
-                            onClick={() => handleWishList(_id)}
-                            className="btn btn-outline btn-success flex-1 py-2 px-4 transition-colors"
-                            aria-label={`Add ${title} to wishlist`}
-                        >
-                            Wishlist
-                        </button>
-                    </div>
+        <motion.div
+            variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+            }}
+            whileHover={{ y: -8 }}
+            className="group bg-white  overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
+        >
+            {/* Image Section */}
+            <div className="relative h-52 overflow-hidden">
+                <img
+                    src={image}
+                    alt={title}
+                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                />
+                <div className="absolute top-4 left-4">
+                    <span className="px-4 py-1.5 bg-white/90 backdrop-blur-md text-primary text-xs font-bold rounded-full shadow-sm">
+                        {category || "Journal"}
+                    </span>
                 </div>
             </div>
-        </div>
+
+            {/* Content Section */}
+            <div className="p-6 flex flex-col flex-grow">
+                <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300">
+                    {title}
+                </h2>
+                <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-6">
+                    {shortdescription}
+                </p>
+
+                {/* Bottom Actions */}
+                <div className="mt-auto flex items-center justify-between gap-3 pt-4 border-t border-gray-50">
+                    <Link
+                        to={`/blog_details/${_id}`}
+                        className="flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all underline decoration-2 underline-offset-4"
+                    >
+                        Read More <FaArrowRight className="text-xs" />
+                    </Link>
+
+                    <button
+                        onClick={() => handleWishList(_id)}
+                        className="p-3 rounded-full bg-gray-50 text-gray-400 hover:bg-red-50 hover:text-red-500 transition-colors duration-300"
+                        title="Add to wishlist"
+                    >
+                        <FaHeart />
+                    </button>
+                </div>
+            </div>
+        </motion.div>
     );
 };
 
