@@ -24,7 +24,7 @@ const AllBlogs = () => {
 
     return (
         <div className='pb-16 pt-10'>
-            {/* --- Updated Header Section Start --- */}
+            {/* --- Header Section Start --- */}
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
